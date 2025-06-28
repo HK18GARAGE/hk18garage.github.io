@@ -2,7 +2,40 @@
 <html lang="en">
 
 <head>
-  <title>HK.18 GARAGE | Best Two-Wheeler Repair & Service in Surat</title>
+  <title>function openModal(serviceKey) {
+  const modal = document.getElementById("serviceModal");
+  const data = serviceDetails[serviceKey];
+
+  // Define translation keys
+  const titleKey = `title_${serviceKey}`;
+  const descKey = `${serviceKey}_desc_long`;
+
+  // Set text and data-key for title and description
+  document.getElementById("modalTitle").textContent = translations.en[titleKey];
+  document.getElementById("modalTitle").setAttribute("data-key", titleKey);
+
+  document.getElementById("modalDesc").textContent = translations.en[descKey];
+  document.getElementById("modalDesc").setAttribute("data-key", descKey);
+
+  // Clear old images
+  const imagesContainer = document.getElementById("modalImages");
+  imagesContainer.innerHTML = "";
+
+  // Load new images
+  if (data.images && data.images.length > 0) {
+    data.images.forEach(img => {
+      const image = document.createElement("img");
+      image.src = img;
+      image.style.width = "100px";
+      image.style.margin = "5px";
+      image.style.borderRadius = "10px";
+      imagesContainer.appendChild(image);
+    });
+  }
+
+  modal.style.display = "flex";
+} 
+HK.18 GARAGE | Best Two-Wheeler Repair & Service in Surat</title>
   <meta name="description" content="Fast, Reliable & Professional Motorcycle Service in Surat. HK.18 GARAGE offers expert two-wheeler repair, pickup-drop, scooter and bike service." />
   <meta name="keywords" content="bike service Surat, two wheeler repair, scooter mechanic, HK.18 garage, motorcycle maintenance">
   <meta name="author" content="HK.18 GARAGE">
@@ -14,8 +47,8 @@
 <meta property="og:image" content="logo2.png" />
 <meta property="og:url" content="https://hk18garage.github.io" />
   <link rel="icon" type="image/png" href="logo2.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
-</head>
+  <link rel
+ </head>
   <style>
 html {
   scroll-behavior: smooth;
@@ -63,7 +96,10 @@ img {
       text-align: center;
       color: #66FCF1;
 
-    }
+   }
+
+
+
 #why-us {
   background-color: #1F2833;
   padding: 20px;
@@ -115,61 +151,110 @@ img {
     <p>Fast, Reliable & Professional Motorcycle Service — Right Here in Surat!</p>
   </header>
 
-  <nav>
-<h2 style="font-size: 28px; color: #FFFFFF; margin-top: 2px; margin-bottom: 8px;">⬇️click to visit page⬇️</h2>
-  <div id="owner"</div>
-    <a href="#about">About</a>
-    <a href="#why-us">Why Us</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#indian-bikes">Indian Bikes</a>
-    <a href="#contact">Contact</a>
-    <a href="#location">Location</a>
-    <a href="#feedback">Feedback</a>
-    <a href="#live-chat">Chat</a>
-  </nav>
+<nav>
+  <h2 data-key="nav_heading" style="font-size: 28px; color: #FFFFFF; margin-top: 2px; margin-bottom: 8px;">⬇️click to visit page⬇️</h2>
+  <div id="owner"></div>
+  <a href="#about" data-key="nav_about">About</a>
+  <a href="#why-us" data-key="nav_why_us">Why Us</a>
+  <a href="#services" data-key="nav_services">Services</a>
+  <a href="#gallery" data-key="nav_gallery">Gallery</a>
+  <a href="#indian-bikes" data-key="nav_indian_bikes">Indian Bikes</a>
+  <a href="#contact" data-key="nav_contact">Contact</a>
+  <a href="#location" data-key="nav_location">Location</a>
+  <a href="#feedback" data-key="nav_feedback">Feedback</a>
+  <a href="#live-chat" data-key="nav_chat">Chat</a>
+</nav>
 
   <div style="margin: 40px auto; max-width: 650px; background: linear-gradient(135deg, #111111, #1F2833); border: 2px solid gold; border-radius: 18px; padding: 30px 25px; text-align: center; box-shadow: 0 0 30px rgba(255, 215, 0, 0.4); position: relative;">
   <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); background-color: gold; color: #000; padding: 8px 20px; font-size: 18px; font-weight: bold; border-radius: 50px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);">
    👑 Founder
 </div>
-  <h2 style="font-size: 28px; color: #FFD700; margin-top: 25px;">Mr. Huzefa Khan</h2>
+ <h2 onclick="toggleOwnerModal()" style="font-size: 28px; color: #FFD700; margin-top: 25px; cursor: pointer;">👉 Mr. Huzefa Khan  👈</h2>
   <p style="font-size: 20px; color: #CCCCCC;">The Visionary Leader & Chief Mechanic of <strong style="color:#66FCF1;">HK.18 GARAGE</strong></p>
   <p style="font-size: 16px; color: #999999; margin-top: 10px;">👑“A king of two-wheelers, mastering machines with precision & passion.”⚙️</p>
   </div>
 
 <div class="container">
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p><strong>Bio:</strong> HK.18 GARAGE – Expert two-wheeler repair & service shop. Reliable, fast & affordable care for your ride. Your bike’s health, our priority!</p>
-      <p><strong>Description:</strong> HK.18 Garage is your trusted destination for all two-wheeler needs, offering top-notch services and repairs for motorcycles and scooters. Our skilled technicians are equipped with the latest tools and expertise to ensure your ride stays in peak condition. Whether it’s routine maintenance, complex repairs, or custom modifications, we pride ourselves on delivering efficient, reliable, and affordable solutions. At HK.18 Garage, customer satisfaction is our priority, providing you with fast, friendly, and professional service every time. Keep your bike running smoothly with HK.18 Garage! Anytime anywhere we will pickup your bike and also drop your bike we are best service provider visit HK.18 garage, this is first garage promised for happyness.</p>
-    </section>
+  <section id="about" class="section">
+    <h2 data-key="about_us">About Us</h2>
+    <p data-key="about_bio">
+      <strong>Bio:</strong> HK.18 GARAGE – Expert two-wheeler repair & service shop. Reliable, fast & affordable care for your ride. Your bike’s health, our priority!
+    </p>
+    <p data-key="about_desc">
+      HK.18 Garage is your trusted destination for all two-wheeler needs, offering top-notch services and repairs for motorcycles and scooters. Our skilled technicians are equipped with the latest tools and expertise to ensure your ride stays in peak condition. Whether it’s routine maintenance, complex repairs, or custom modifications, we pride ourselves on delivering efficient, reliable, and affordable solutions. At HK.18 Garage, customer satisfaction is our priority, providing you with fast, friendly, and professional service every time. Keep your bike running smoothly with HK.18 Garage! Anytime anywhere we will pickup your bike and also drop your bike we are best service provider visit HK.18 garage, this is first garage promised for happyness.
+    </p>
+  </section>
 
-<section id="why-us" class="section">
-  <h2>Why Choose Us?</h2>
-  <p>Our service is our greatest strength. Our range of two-wheeler services is the most efficient and affordable in the market. We ensure that the satisfaction needle is always sliding to the right on the customer satisfaction meter.</p>
+  <section id="why-us" class="section">
+    <h2 data-key="why_us">Why Choose Us?</h2>
+    <p data-key="why_us_desc">
+      Our service is our greatest strength. Our range of two-wheeler services is the most efficient and affordable in the market. We ensure that the satisfaction needle is always sliding to the right on the customer satisfaction meter.
+    </p>
+  </section>
+</div>
+
+<section id="services" class="section">
+  <h2 data-key="our_services">Our Services</h2>
+
+  <div class="service-card" data-service="battery" data-key="battery_desc">
+    Battery – Testing, replacement & maintenance for reliable performance.
+  </div>
+
+  <div class="service-card" data-service="brake" data-key="brake_desc">
+    Brake Service – Pads, full system check, smooth & safe braking.
+  </div>
+
+  <div class="service-card" data-service="carburettor" data-key="carburettor_desc">
+    Carburettor Cleaning – Tuning & restoration for fuel efficiency.
+  </div>
+
+  <div class="service-card" data-service="cooling" data-key="cooling_desc">
+    Cooling System – Radiator & fan service to prevent overheating.
+  </div>
+
+  <div class="service-card" data-service="delivery" data-key="delivery_desc">
+    Delivery – Pickup & drop bike service, anytime, anywhere.
+  </div>
+
+  <div class="service-card" data-service="electrical" data-key="electrical_desc">
+    Electrical Repair – Lighting, ignition, battery, and wiring fixes.
+  </div>
+
+  <div class="service-card" data-service="engine" data-key="engine_desc">
+    Engine Repair – Diagnostics, overhauls & part replacement.
+  </div>
+
+  <div class="service-card" data-service="inspection" data-key="inspection_desc">
+    General Inspection – Preventive checks for overall health.
+  </div>
+
+  <div class="service-card" data-service="major_minor" data-key="major_minor_desc">
+    Major/Minor Services – Complete bike care with attention to detail.
+  </div>
+
+  <div class="service-card" data-service="oil" data-key="oil_desc">
+    Oil Change – Premium oils for engine health.
+  </div>
+
+  <div class="service-card" data-service="purchase" data-key="purchase_desc">
+    Pre-Purchase Inspection – Peace of mind before you buy.
+  </div>
+
+  <div class="service-card" data-service="shocks" data-key="shocks_desc">
+    Rear Shocks – Repair & replacement for comfort.
+  </div>
+
+  <div class="service-card" data-service="scooter" data-key="scooter_desc">
+    Scooter Services – Comprehensive care for all scooter types.
+  </div>
+
+  <div class="service-card" data-service="all" data-key="all_desc">
+    All Services – From diagnostics to suspension repair and more.
+  </div>
 </section>
 
-    <section id="services" class="section">
-      <h2>Our Services</h2>
-      <div class="service-card">Battery – Testing, replacement & maintenance for reliable performance.</div>
-      <div class="service-card">Brake Service – Pads, full system check, smooth & safe braking.</div>
-      <div class="service-card">Carburettor Cleaning – Tuning & restoration for fuel efficiency.</div>
-      <div class="service-card">Cooling System – Radiator & fan service to prevent overheating.</div>
-      <div class="service-card">Delivery – Pickup & drop bike service, anytime, anywhere.</div>
-      <div class="service-card">Electrical Repair – Lighting, ignition, battery, and wiring fixes.</div>
-      <div class="service-card">Engine Repair – Diagnostics, overhauls & part replacement.</div>
-      <div class="service-card">General Inspection – Preventive checks for overall health.</div>
-      <div class="service-card">Major/Minor Services – Complete bike care with attention to detail.</div>
-      <div class="service-card">Oil Change – Premium oils for engine health.</div>
-      <div class="service-card">Pre-Purchase Inspection – Peace of mind before you buy.</div>
-      <div class="service-card">Rear Shocks – Repair & replacement for comfort.</div>
-      <div class="service-card">Scooter Services – Comprehensive care for all scooter types.</div>
-      <div class="service-card">All Services – From diagnostics to suspension repair and more.</div>
-    </section>
-
 <section id="gallery" class="section">
-  <h2>Gallery</h2>
+  <h2 data-key="gallery_heading">Gallery</h2>
   <div class="gallery-grid">
     <!-- Images -->
   <a href="bike1.jpg">
@@ -217,11 +302,9 @@ img {
     </video>
   </div>
 </section>
-  
   <section id="indian-bikes" class="section" style="display: none;">
-  <h2>All Indian Bikes</h2>
+  <h2 data-key="indian_bikes_heading">All Indian Bikes</h2>
   <div id="lightgallery" class="gallery-grid">
-
     <a href="1.jpg"><img src="1.jpg" alt="1" loading="lazy"></a>
     <a href="2.jpg"><img src="2.jpg" alt="2" loading="lazy"></a>
     <a href="3.jpg"><img src="3.jpg" alt="3" loading="lazy"></a>
@@ -326,46 +409,63 @@ img {
 </div>
 </section>
 
-    <!-- Button to show Indian bikes -->
+   <!-- Button to show Indian bikes -->
 <div style="text-align: center; margin-top: 20px;">
-   <button onclick="document.getElementById('indian-bikes').style.display='block'; this.style.display='none'; document.getElementById('indian-bikes').scrollIntoView({ behavior: 'smooth' });" style="padding: 20px 30px; background-color: #C30010; color: white; border: none; border-radius: 13px; font-size: 21px;">
-  View All Indian Bikes
-</button>
+  <button 
+    onclick="document.getElementById('indian-bikes').style.display='block'; this.style.display='none'; document.getElementById('indian-bikes').scrollIntoView({ behavior: 'smooth' });"
+    style="padding: 20px 30px; background-color: #C30010; color: white; border: none; border-radius: 13px; font-size: 21px;"
+    data-key="view_indian_bikes_btn"
+  >
+    View All Indian Bikes
+  </button>
 </div>
 
 <div style="text-align:center; margin-top:20px;">
-  <a href="#indian-bikes" style="padding:20px 30px; background:#45A29E; color:white; border-radius:8px; text-decoration:none;">⬆ Back to Top</a>
+  <a href="#indian-bikes"
+     style="padding:20px 30px; background:#45A29E; color:white; border-radius:8px; text-decoration:none;"
+     data-key="back_to_top_btn"
+  >
+    ⬆ Back to Top
+  </a>
 </div>
 
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p><strong>Phone:</strong> <a href="tel:+918488008843">+91 84880 08843</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/+918488008843">Chat Now</a></p>
-      <p><strong>YouTube:</strong> <a href="https://youtube.com/@hk.18garage?si=3usmPqihSirHJPUH">Visit Channel</a></p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/hk.18_garage">@hk.18_garage</a></p>
-      <p><strong>Email:</strong> <a href="mailto:huzefakhan0930@gmail.com">huzefakhan0930@gmail.com</a></p>
-      <a href="https://www.google.com/maps/dir//HK.18+garage,+National+Industrial+Estate,+infront+of+golden+park,+golden,+HK.18+garage,+16-21,+Bhestan,+Un,+Surat,+Gujarat+395023,+India/@0,0,22z/data=!4m6!4m5!1m0!1m2" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #FFFF00; color: black; border: none; border-radius: 8px; text-decoration: none;">
-  📍 Get Directions on Google Maps
-</a>
-    </section>
+  <h2 data-key="contact_title">Contact</h2>
+  <p><strong data-key="contact_phone">Phone:</strong> <a href="tel:+918488008843">+91 84880 08843</a></p>
+  <p><strong data-key="contact_whatsapp">WhatsApp:</strong> <a href="https://wa.me/+918488008843" target="_blank" data-key="contact_whatsapp_link">Chat Now</a></p>
+  <p><strong data-key="contact_youtube">YouTube:</strong> <a href="https://youtube.com/@hk.18garage?si=3usmPqihSirHJPUH" target="_blank" data-key="contact_youtube_link">Visit Channel</a></p>
+  <p><strong data-key="contact_instagram">Instagram:</strong> <a href="https://instagram.com/hk.18_garage" target="_blank">@hk.18_garage</a></p>
+  <p><strong data-key="contact_email">Email:</strong> <a href="mailto:huzefakhan0930@gmail.com">huzefakhan0930@gmail.com</a></p>
+  <a href="https://www.google.com/maps/dir//HK.18+garage,+National+Industrial+Estate,+infront+of+golden+park,+golden,+HK.18+garage,+16-21,+Bhestan,+Un,+Surat,+Gujarat+395023,+India/@0,0,22z/data=!4m6!4m5!1m0!1m2" target="_blank"
+     style="display: inline-block; padding: 10px 20px; background-color: #FFFF00; color: black; border: none; border-radius: 8px; text-decoration: none;"
+     data-key="get_directions_btn">
+    📍 Get Directions on Google Maps
+  </a>
+</section>
 
-    <section id="location" class="section">
-      <h2>Find Us</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14887.117991658122!2d72.8590478!3d21.1213554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051006ea26387%3A0x9a831a0a75502a9e!2sHK.18%20garage!5e0!3m2!1sen!2sin!4v1750555083917!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+<section id="location" class="section">
+  <h2 data-key="find_us">Find Us</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14887.117991658122!2d72.8590478!3d21.1213554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051006ea26387%3A0x9a831a0a75502a9e!2sHK.18%20garage!5e0!3m2!1sen!2sin!4v1750555083917!5m2!1sen!2sin"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
 
-    <section id="feedback" class="section">
-      <h2>Feedback & Rating</h2>
-      <p>We value your feedback! <a href="https://search.google.com/local/writereview?placeid=ChIJh2OibgBR4DsRnipQdQoag5o">Click here to leave a Google Review</a></p>
-    </section>
-  </div>
+<section id="feedback" class="section">
+  <h2 data-key="feedback_title">Feedback & Rating</h2>
+  <p><span data-key="feedback_text">We value your feedback!</span>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJh2OibgBR4DsRnipQdQoag5o" target="_blank" data-key="google_review_link">
+      Click here to leave a Google Review
+    </a>
+  </p>
+</section>
 
 <section id="live-chat" class="section">
-  <h2>Live Chat</h2>
+  <h2 data-key="live_chat">Live Chat</h2>
   <div style="max-width: 500px; margin: auto;">
-    <input type="text" id="chatName" placeholder="Your Name" style="width: 100%; padding: 8px; margin-bottom: 8px;">
-    <textarea id="chatMessage" placeholder="Type your message..." style="width: 100%; padding: 8px; height: 80px;"></textarea>
-    <button onclick="sendMessage()" style="margin-top: 8px; padding: 8px 20px; background: #C30010; color: white; border: none; border-radius: 6px;">Send</button>
+    <input type="text" id="chatName" placeholder="Your Name" data-placeholder-key="chat_name_placeholder" style="width: 100%; padding: 8px; margin-bottom: 8px;">
+    <textarea id="chatMessage" placeholder="Type your message..." data-placeholder-key="chat_message_placeholder" style="width: 100%; padding: 8px; height: 80px;"></textarea>
+    <button onclick="sendMessage()" data-key="send_button" style="margin-top: 8px; padding: 8px 20px; background: #C30010; color: white; border: none; border-radius: 6px;">
+      Send
+    </button>
     <div id="chatBox" style="margin-top: 15px; background: #1F2833; padding: 10px; max-height: 300px; overflow-y: scroll; border-radius: 6px;"></div>
   </div>
 </section>
@@ -381,6 +481,52 @@ img {
 
     &copy; 2025 HK.18 GARAGE. All rights reserved.
   </footer>
+
+<div id="serviceModal" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+">
+  <div class="modal-content" style="
+    background: #1F2833;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px #000;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+  ">
+    <span onclick="closeModal()" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+    ">❌</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc" style="margin-top: 10px; font-size: 15px;"></p>
+    <div id="modalImages" style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    "></div>
+  </div>
+</div>
+
 <!-- OneSignal Push Notification -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
@@ -472,6 +618,568 @@ img {
   });
 </script>
 
+  <!-- 👑 Owner Modal -->
+<div id="ownerModal" class="owner-modal hidden">
+  <div class="owner-modal-content">
+    <!-- ❌ Close Button -->
+    <span onclick="toggleOwnerModal()" class="close-btn">❌</span>
+
+    <!-- 👑 Owner Image -->
+    <div style="position: relative; display: inline-block; margin-bottom: 20px;">
+     <img src="owner.jpg" alt="Owner" style="
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15%;
+  padding: 8px;
+  background-color: white;
+  border: 5px solid gold;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+">
+      <div style="
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        color: #FFD700;
+        text-shadow: 1px 1px 2px black;
+      "></div>
+    </div>
+
+    <!-- 🎖️ Text Content -->
+    <h2 style="font-family: 'Cinzel', serif;color: white; margin: 10px 0 5px;">MR. HUZEFA KHAN</h2>
+    <p style="font-family: 'Playfair Display', serif;color: black; font-weight: bold;">Founder & Chief Mechanic</p>
+    <p style="font-family: 'Poppins', sans-serif;color: #FFF; font-size: 15px;">“A king of two-wheelers, mastering machines with precision & passion.”</p>
+  </div>
+</div>
+
+<!-- 💠 Modal Styling -->
+<style>
+  .owner-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .owner-modal-content {
+    background: linear-gradient(135deg, #FFD700, #C30010);
+    border: 4px solid gold;
+    border-radius: 25px;
+    padding: 30px 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    text-align: center;
+    position: relative;
+    animation: popUp 0.4s ease-out;
+    box-sizing: border-box;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  @keyframes popUp {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<!-- ✅ JavaScript -->
+<script>
+  function toggleOwnerModal() {
+    const modal = document.getElementById("ownerModal");
+    modal.classList.toggle("hidden");
+  }
+</script>
+
+ <script>
+const translations = {
+  hi: {
+    our_services: "हमारी सेवाएं",
+    battery_desc: "बैटरी – परीक्षण, रिप्लेसमेंट और रख-रखाव",
+    brake_desc: "ब्रेक सर्विस – पैड, पूरी जांच, सुरक्षित ब्रेकिंग",
+    carburettor_desc: "कार्बोरेटर क्लीनिंग – ट्यूनिंग और फ्यूल एफिशिएंसी",
+    cooling_desc: "कूलिंग सिस्टम – रेडिएटर और फैन सर्विस",
+    delivery_desc: "डिलीवरी – पिकअप और ड्रॉप बाइक सेवा",
+    electrical_desc: "इलेक्ट्रिकल रिपेयर – लाइटिंग, इग्निशन, वायरिंग सुधार",
+    engine_desc: "इंजन रिपेयर – डायग्नोस्टिक, ओवरहॉल और पार्ट बदलना",
+    inspection_desc: "जनरल इंस्पेक्शन – बाइक की समग्र स्थिति की जांच",
+    major_minor_desc: "मेजर/माइनर सर्विस – पूरी बाइक केयर",
+    oil_desc: "ऑयल चेंज – इंजन की सेहत के लिए प्रीमियम ऑयल",
+    purchase_desc: "प्री-पर्चेस इंस्पेक्शन – खरीद से पहले शांति",
+    shocks_desc: "रियर शॉक्स – मरम्मत और बदलाव से आरामदायक राइड",
+    scooter_desc: "स्कूटर सर्विस – सभी प्रकार के स्कूटर की सेवा",
+    all_desc: "सभी सेवाएं – डायग्नोस्टिक से सस्पेंशन रिपेयर तक",
+    about_us: "हमारे बारे में",
+    about_bio: "बायो: HK.18 GARAGE – दोपहिया वाहनों की विशेषज्ञ मरम्मत और सेवा। आपकी सवारी के लिए भरोसेमंद, तेज़ और किफायती देखभाल। आपकी बाइक की सेहत, हमारी प्राथमिकता!",
+    about_desc: "HK.18 गैरेज आपके दोपहिया वाहन की सभी जरूरतों के लिए भरोसेमंद जगह है, जो मोटरसाइकिल और स्कूटर की बेहतरीन सेवा और मरम्मत प्रदान करता है। हमारे कुशल तकनीशियन नवीनतम उपकरणों और विशेषज्ञता से लैस हैं ताकि आपकी सवारी हमेशा बेहतर स्थिति में बनी रहे। सामान्य रख-रखाव हो या जटिल मरम्मत या फिर कस्टम मोडिफिकेशन — हम तेज़, विश्वसनीय और किफायती समाधान प्रदान करने में गर्व महसूस करते हैं। HK.18 गैरेज में ग्राहक की संतुष्टि हमारी प्राथमिकता है। आपकी बाइक की देखभाल के लिए हम हर समय तैयार हैं। हम बाइक पिकअप और ड्रॉप की सुविधा भी देते हैं। HK.18 गैरेज पहला ऐसा गैरेज है जो खुशी की गारंटी देता है।",
+    why_us: "हमें क्यों चुनें?",
+    why_us_desc: "हमारी सेवा हमारी सबसे बड़ी ताकत है। हमारी दोपहिया सेवाएं सबसे कुशल और किफायती हैं। हम सुनिश्चित करते हैं कि ग्राहक संतुष्टि मीटर का कांटा हमेशा दाईं ओर बढ़ता रहे।",
+   title_battery: "बैटरी",
+    title_brake: "ब्रेक सेवा",
+    title_carburettor: "कार्बोरेटर सफाई",
+    title_cooling: "कूलिंग सिस्टम",
+    title_delivery: "डिलीवरी",
+    title_electrical: "इलेक्ट्रिकल मरम्मत",
+    title_engine: "इंजन मरम्मत",
+    title_inspection: "सामान्य जांच",
+    title_major_minor: "प्रमुख/छोटी सेवाएं",
+    title_oil: "ऑयल चेंज",
+    title_purchase: "खरीद से पहले निरीक्षण",
+    title_shocks: "रियर शॉक्स",
+    title_scooter: "स्कूटर सेवा",
+    title_all: "सभी सेवाएं",
+    battery_desc_long: "आपकी बाइक को एक ऐसे दिल की जरूरत है जो कभी रुकता नहीं — और वह दिल है बैटरी। HK.18 GARAGE में हम सिर्फ बैटरी टेस्ट या रिप्लेस नहीं करते, हम आपकी सवारी की आत्मा को ज़िंदा करते हैं। चाहे जल्दी ऑफिस जाना हो या लंबी यात्रा पर निकलना हो, हमारी बैटरी सेवा आपको कभी फेल नहीं होने देगी। हर स्टार्ट में भरोसा, हर राइड में आत्मविश्वास — यही है हमारा वादा।",
+   brake_desc_long: "आपकी सुरक्षा हर रुकने से शुरू होती है — और हर रुकाव ब्रेक पर निर्भर करता है। HK.18 GARAGE में हम जानते हैं कि सही ब्रेकिंग कितनी महत्वपूर्ण है। हमारे विशेषज्ञ तकनीशियन हर ब्रेक पैड, डिस्क और फ्लूइड की गहराई से जांच, मरम्मत और बदलाव करते हैं ताकि हर बार ब्रेकिंग स्मूद और सुरक्षित हो। चाहे आप ट्रैफिक में हों या खुली सड़कों पर, आपको हर राइड में भरोसे का एहसास होना चाहिए। किसी चेतावनी का इंतज़ार न करें — अपने ब्रेक्स की देखभाल हमें करने दें ताकि आप निश्चिंत होकर सवारी कर सकें। क्योंकि सुरक्षा में हम कोई समझौता नहीं करते।",
+  carburettor_desc_long: "क्या आपकी बाइक की पावर कम हो रही है, स्लगिश फील हो रही है या माइलेज घट गया है? इसकी जड़ में होता है कार्बोरेटर। HK.18 GARAGE में हम आपकी बाइक के इंजन को साफ हवा दिलाने का काम करते हैं — हर पार्ट को साफ करके, कार्बन जमा हटाकर, और एयर-फ्यूल बैलेंस को ट्यून करके। इसका असर आपको थ्रॉटल रिस्पॉन्स, स्मूद एक्सेलेरेशन और इंजन की बेहतर सेहत में दिखेगा। एक गंदा कार्बोरेटर आपकी राइड का मज़ा छीन सकता है — इसलिए हमें मौका दीजिए कि हम आपकी मशीन में फिर से जान भर सकें।",
+  cooling_desc_long: "ओवरहीटिंग हर राइडर का सबसे बड़ा दुश्मन है — लेकिन हम आपकी बाइक को ठंडा रखने में माहिर हैं। HK.18 GARAGE में हमारी कूलिंग सिस्टम सर्विस इंजन को गर्मी में भी शांत रखती है, चाहे वह तपता हुआ दिन ही क्यों न हो। रेडिएटर फ्लशिंग हो, कूलेंट टॉप-अप या फैन की जांच — हम सब कुछ सटीकता से करते हैं। ठंडा इंजन मतलब स्मूद परफॉर्मेंस, लंबी लाइफ और बेफिक्री से की गई राइडिंग। गर्मी को अपने एडवेंचर का दुश्मन न बनने दें — हमसे सर्विस लें और बाइकर की तरह ठंडे दिमाग से सवारी करें।",
+     delivery_desc_long: "व्यस्त शेड्यूल? गैरेज आने का समय नहीं मिल रहा? कोई बात नहीं — हम खुद आएंगे! हमारी भरोसेमंद पिकअप और ड्रॉप सेवा से आपकी बाइक को बिना किसी रुकावट के पूरा ध्यान मिलेगा। आप घर पर हों, ऑफिस में हों या सूरत में कहीं भी हों — बस सर्विस बुक करें, बाकी हम संभाल लेंगे। आपकी दोपहिया सुरक्षित रूप से ली जाएगी, एक्सपर्ट्स द्वारा सर्विस की जाएगी और समय पर वापिस दी जाएगी — मुस्कान के साथ। यह सिर्फ सुविधा नहीं, बल्कि हमारी देखभाल की गारंटी है। HK.18 GARAGE हर समय आपके लिए तैयार है — कहीं भी, कभी भी। क्योंकि आपका समय अनमोल है और आपकी सवारी सबसे बेहतरीन के लायक है।",
+    electrical_desc_long: "हेडलाइट्स झपक रही हैं? हॉर्न बंद है? वायरिंग में दिक्कत? छोटी-छोटी इलेक्ट्रिकल समस्याओं को बड़ी मुसीबतों में मत बदलने दें। HK.18 GARAGE में हमारे एक्सपर्ट तकनीशियन हर तरह की इलेक्ट्रिकल मरम्मत को सटीकता और देखभाल से संभालते हैं। इग्निशन की गड़बड़ी हो, लाइटिंग का झंझट या बैटरी वायरिंग की परेशानी — हम आपकी बाइक में वो स्पार्क वापस लाते हैं जिसकी उसे ज़रूरत है। हर सुधार के साथ हम सुनिश्चित करते हैं कि आपकी सवारी सुरक्षित, भरोसेमंद और पूरी तरह से कार्यशील हो। आपकी बाइक को चमकने और तुरंत जवाब देने का हक है — और हम उसे फिर से जिंदा करते हैं क्योंकि हर कनेक्शन मायने रखता है।",
+    engine_desc_long: "आपकी बाइक का इंजन उसका दिल है — और जब वो धीमा पड़ता है, आपकी सवारी भी थम जाती है। HK.18 GARAGE में हम हर इंजन को उसी प्यार और ध्यान से ठीक करते हैं जैसा वो डिज़र्व करता है। अजीब आवाज़ें, पावर में कमी, ज़्यादा गर्म होना या स्टार्ट न होना — हमारे एक्सपर्ट हर समस्या की जड़ तक जाते हैं। चाहे छोटी मरम्मत हो या पूरा ओवरहॉल — हम इंजन को उसकी असली ताकत लौटाते हैं। जब आपका इंजन स्मूद आवाज़ करता है, तो हर सफर ताकतवर लगता है। भरोसे के साथ चलिए — हम आपके बाइक के दिल को दोबारा ज़िंदा कर देंगे।",
+      inspection_desc_long: "हर सवारी एक कहानी कहती है — और हर बाइक उस कहानी को आगे बढ़ाने के लिए एक हेल्थ चेकअप डिज़र्व करती है। HK.18 GARAGE का जनरल इंस्पेक्शन आपके दोपहिया वाहन के लिए एक फुल-बॉडी स्कैन जैसा है। ब्रेक से लेकर लाइट्स, टायर्स से लेकर सस्पेंशन तक — हम हर ज़रूरी हिस्से की विशेषज्ञ जांच करते हैं। चाहे आप लंबी यात्रा की योजना बना रहे हों या सिर्फ मन की शांति चाहते हों — हमारा चेकअप सुरक्षा, परफॉर्मेंस और भरोसे का वादा करता है। समस्याओं के अचानक सामने आने का इंतजार मत कीजिए — HK.18 GARAGE उन्हें पहले ही पकड़ लेगा और आपकी बाइक को हर रास्ते पर मुस्कुराने देगा।",
+      major_minor_desc_long: "आपकी बाइक सिर्फ एक सवारी नहीं — वो देखभाल की हकदार है। HK.18 GARAGE की मेजर और माइनर सर्विस आपकी मशीन को वो प्यार देती है जिसकी उसे ज़रूरत है — चाहे वो छोटा ट्यूनअप हो या पूरा बदलाव। ऑयल चेंज से लेकर फिल्टर चेक तक, डीप डायग्नोस्टिक्स से लेकर पार्ट रिप्लेसमेंट तक — हर सर्विस को हम दिल से करते हैं। छोटी समस्या? हम उसे बढ़ने से पहले ठीक कर देते हैं। बड़ी परेशानी? हम आपकी बाइक को फिर से जिंदा कर देते हैं। HK.18 GARAGE के साथ हर बोल्ट विश्वास से टाइट होता है — और हर सर्विस एक मुस्कान के साथ खत्म होती है — आपकी और आपकी बाइक की। ❤️",
+      oil_desc_long: "इंजन ऑयल को अपनी बाइक का जीवन-रस समझिए। समय के साथ ये गंदा, थका हुआ और अपनी ताकत खो देता है। HK.18 GARAGE में हम सिर्फ ऑयल नहीं बदलते — हम आपके इंजन की आत्मा को फिर से जिंदा करते हैं। 🛠️✨ प्रीमियम ग्रेड ऑयल के साथ हर राइड स्मूद होती है, हर थ्रॉटल पावरफुल और हर स्टार्ट आत्मविश्वास से भरपूर। अब ना इंजन पर ज़ोर, ना ओवरहीटिंग — सिर्फ प्योर और पावरफुल परफॉर्मेंस। अपनी बाइक को फिर से खुलकर सांस लेने दीजिए — भरोसा रखिए, आपका इंजन हर स्मूद माइल के लिए आपको धन्यवाद देगा। 💨❤️",
+      purchase_desc_long: "बाइक खरीदना सिर्फ एक सौदा नहीं होता — यह एक भावना है, दो पहियों पर एक सपना है। लेकिन छुपी हुई समस्याएं उस सपने को पछतावे में बदल सकती हैं। HK.18 GARAGE की प्री-पर्चेस इंस्पेक्शन सेवा सुनिश्चित करती है कि आप आत्मविश्वास के साथ सवारी शुरू करें, चिंता के साथ नहीं। 🛠️ हम हर नट-बोल्ट, इंजन की धड़कन, ब्रेक की पकड़ और इलेक्ट्रिकल स्पार्क को चेक करते हैं और आपको एक पूरा हेल्थ रिपोर्ट देते हैं। कोई सरप्राइज नहीं — सिर्फ ईमानदारी और विशेषज्ञ सलाह। चाहे पहली बाइक हो या अगली, हमारी टीम आपकी जर्नी शुरू होने से पहले ही सुरक्षा देती है। 💯✅ समझदारी से खरीदें, आत्मविश्वास से चलाएं।",
+      shocks_desc_long: "एक उबड़-खाबड़ सवारी आपकी यात्रा को बर्बाद कर सकती है, लेकिन स्मूद रियर शॉक्स सवारी की खुशी वापस लाते हैं। HK.18 GARAGE में, हम जानते हैं कि आपकी बाइक को आपको कितना आराम देना चाहिए — हर झटका सोख ले और हर मोड़ स्थिर हो। चाहे रोज़ाना का सफर हो या लंबी यात्रा, घिसे हुए शॉक्स इसे मुश्किल और असुरक्षित बना सकते हैं। इसलिए हम आपकी रियर सस्पेंशन की जांच, मरम्मत या बदलने का काम सटीकता और देखभाल से करते हैं। 🛠️🧰 आत्मविश्वास से चलें, रास्तों पर फिसलें — हर यात्रा को महसूस करें, हर गड्ढे को नहीं। आराम, नियंत्रण और देखभाल — यही है हमारा वादा। 💯🏁",
+      scooter_desc_long: "आपका स्कूटर सिर्फ एक सवारी नहीं — वो आपका रोज़ का साथी है। किराना लाना हो या ऑफिस जाना, वो स्मूद हैंडलिंग, फटाफट स्टार्ट और बिना परेशानी के चलने के लायक है। HK.18 GARAGE में हम हर स्कूटर की देखभाल ऐसे करते हैं जैसे वो हमारा हो। चाहे इंजन ट्यूनिंग हो, ब्रेक चेक, ऑयल चेंज या इलेक्ट्रिकल फॉल्ट — हम सब कुछ विशेषज्ञता से करते हैं। 🧰⚙️ छोटी-छोटी समस्याओं को बड़ी मुसीबत में मत बदलने दीजिए। अपने स्कूटर को वो प्यार दीजिए जो वो डिज़र्व करता है और हर मोड़ पर उसकी स्मूदनेस महसूस कीजिए। हम हमेशा आपके स्कूटर को भरोसेमंद, कुशल और तैयार रखते हैं — हमेशा। ❤️🛵",
+      all_desc_long: "HK.18 GARAGE में हम सिर्फ बाइक रिपेयर नहीं करते — हम उसकी देखभाल परिवार की तरह करते हैं। चाहे आपके दोपहिया को सिर्फ ऑयल चेंज की ज़रूरत हो या पूरा इंजन ओवरहाल — हम जोश, सटीकता और गर्व के साथ काम करते हैं। 🧰💪 बैटरी टेस्टिंग 🔋 से लेकर कार्बोरेटर क्लीनिंग, ब्रेक रिपेयर 🛑 से लेकर रियर शॉक्स रिप्लेसमेंट तक — हम सब कुछ एक ही छत के नीचे करते हैं। स्कूटर है? वो भी हमारे पास कवर है 🛵। पिकअप और ड्रॉप चाहिए? हम आ जाते हैं 🚚। हर नट, हर बोल्ट, हर वायर हमारी पूरी नज़र में होता है — क्योंकि आपकी सुरक्षा और संतुष्टि हमारे लिए सबसे ज़रूरी है ❤️। HK.18 GARAGE में हर सर्विस एक काम नहीं — एक वादा है, कि आप हर बार स्मूद, सेफ और मुस्कान के साथ राइड करें। 😊✨",
+      nav_heading: "⬇️पेज पर जाने के लिए क्लिक करें⬇️",
+nav_about: "हमारे बारे में",
+nav_why_us: "हमें क्यों चुनें",
+nav_services: "सेवाएं",
+nav_gallery: "गैलरी",
+nav_indian_bikes: "भारतीय बाइक",
+nav_contact: "संपर्क करें",
+nav_location: "स्थान",
+nav_feedback: "प्रतिक्रिया",
+nav_chat: "चैट",
+gallery_heading: "गैलरी",
+indian_bikes_heading: "सभी भारतीय बाइक",
+view_indian_bikes_btn: "सभी भारतीय बाइक देखें",
+back_to_top_btn: "⬆ ऊपर जाएं",
+contact_title: "संपर्क करें",
+contact_phone: "फोन:",
+contact_whatsapp: "व्हाट्सएप:",
+contact_whatsapp_link: "अभी चैट करें",
+contact_youtube: "यूट्यूब:",
+contact_youtube_link: "चैनल देखें",
+contact_instagram: "इंस्टाग्राम:",
+contact_email: "ईमेल:",
+get_directions_btn: "📍 गूगल मैप्स पर दिशा-निर्देश देखें",
+find_us: "हमें खोजें",
+feedback_title: "प्रतिक्रिया और रेटिंग",
+feedback_text: "हम आपकी प्रतिक्रिया को महत्व देते हैं!",
+google_review_link: "Google समीक्षा छोड़ने के लिए यहां क्लिक करें",
+live_chat: "लाइव चैट",
+chat_name_placeholder: "आपका नाम",
+chat_message_placeholder: "अपना संदेश लिखें...",
+send_button: "भेजें",
+},
+
+  gu: {
+    our_services: "અમારી સેવાઓ",
+    battery_desc: "બેટરી – ટેસ્ટિંગ, રિપ્લેસમેન્ટ અને જાળવણી",
+    brake_desc: "બ્રેક સર્વિસ – પેડ્સ, સંપૂર્ણ ચેક અને સલામત બ્રેકિંગ",
+    carburettor_desc: "કાર્બ્યુરેટર સાફ – ટ્યુનિંગ અને ફ્યુઅલ બચત",
+    cooling_desc: "કૂલિંગ સિસ્ટમ – રેડિયેટર અને ફેન સર્વિસ",
+    delivery_desc: "ડિલિવરી – બાઈક પિકઅપ અને ડ્રોપ સર્વિસ",
+    electrical_desc: "ઇલેક્ટ્રિકલ રીપેર – લાઈટિંગ, બેટરી અને વાયરિંગ",
+    engine_desc: "એન્જિન રીપેર – ચેકઅપ, ઓવરહોલ અને પાર્ટ બદલવો",
+    inspection_desc: "સામાન્ય નિરીક્ષણ – સંપૂર્ણ બાઈક તપાસ",
+    major_minor_desc: "મેઝર/માઇનર સર્વિસ – સંપૂર્ણ બાઈક કાળજી",
+    oil_desc: "તેલ બદલવું – એન્જિન માટે શ્રેષ્ઠ ઓઈલ",
+    purchase_desc: "પર્ચેસ પહેલા નિરીક્ષણ – નિર્વિવાદ ખરીદી માટે",
+    shocks_desc: "રીયર શૉક્સ – આરામદાયક સવારી માટે રીપેર અને બદલાવ",
+    scooter_desc: "સ્કૂટર સર્વિસ – દરેક પ્રકારના સ્કૂટર માટે",
+    all_desc: "બધી સેવાઓ – ડાયગ્નોસ્ટિકથી લઈને સસ્પેન્શન રીપેર સુધી",
+    about_us: "અમારા વિશે",
+    about_bio: "બાયો: HK.18 GARAGE – બે-પહિયા વાહનોની નિષ્ણાત સેવા અને મરામત. વિશ્વસનીય, ઝડપી અને ખર્ચ અસરકારક. તમારી બાઈકના આરોગ્ય માટે અમારી પ્રતિબદ્ધતા!",
+    about_desc: "HK.18 ગેરેજ એ તમારી બે-પહિયા જરૂરીયાતોની વિશ્વસનીય જગ્યા છે, જે મોટરસાયકલ અને સ્કૂટરની શ્રેષ્ઠ સેવાઓ અને મરામત આપે છે. અમારા કુશળ ટેકનિશિયન નવીનતમ સાધનો અને નિષ્ણાતીથી સજ્જ છે જેથી તમારી બાઈક સંપૂર્ણ હાલતમાં રહે. સામાન્ય સર્વિસ હોય કે મોટી રીપેર, અમે ઝડપી, વિશ્વસનીય અને ખર્ચ અસરકારક ઉકેલો આપીએ છીએ. HK.18 ગેરેજમાં ગ્રાહક સંતોષ એ અમારું મુખ્ય લક્ષ્ય છે. અમે દરેક વખતે દોસ્તીભરી અને વ્યવસાયિક સેવા આપીએ છીએ. બાઈક માટે પિકઅપ અને ડ્રોપ સર્વિસ પણ ઉપલબ્ધ છે. આ પહેલું ગેરેજ છે જે ખુશી આપવાનું વચન આપે છે.",
+    why_us: "શા માટે પસંદ કરો?",
+    why_us_desc: "અમારી સેવા એ અમારી સૌથી મોટી તાકાત છે. અમારી બાઈક સર્વિસ શ્રેણી સૌથી કાર્યક્ષમ અને સસ્તી છે. અમે ખાતરી કરીએ છીએ કે ગ્રાહક સંતોષ મીટર હંમેશા જમણી તરફ વળી રહે.",
+   title_battery: "બેટરી",
+    title_brake: "બ્રેક સેવા",
+    title_carburettor: "કાર્બ્યુરેટર સફાઈ",
+    title_cooling: "કૂલિંગ સિસ્ટમ",
+    title_delivery: "ડિલિવરી",
+    title_electrical: "ઇલેક્ટ્રિકલ રિપેર",
+    title_engine: "એન્જિન રિપેર",
+    title_inspection: "સામાન્ય તપાસ",
+    title_major_minor: "મુખ્ય/નાની સેવાઓ",
+    title_oil: "તેલ બદલવું",
+    title_purchase: "ખરીદી પહેલાં નિરીક્ષણ",
+    title_shocks: "રીયર શૉક્સ",
+    title_scooter: "સ્કૂટર સેવા",
+    title_all: "બધી સેવાઓ",
+    battery_desc_long: "તમારી બાઈક માટે એ હ્રદય જરૂરી છે જે ક્યારેય બંધ ન થાય — અને એ છે બેટરી. HK.18 GARAGEમાં અમે બેટરી માત્ર ચકાસતા કે બદલતા નથી, અમે તમારા રાઈડના જીવનને ફરી જીવંત કરીએ છીએ. તમારી મુસાફરી સુરક્ષિત અને બાધારહિત રહે તે માટે અમારું નિષ્ણાત બેટરી સર્વિસ ખાતરી આપે છે. દરેક શરૂઆતને શ્રેષ્ઠ બનાવવી — એ જ અમારું વચન છે.",
+   brake_desc_long: "તમારી સુરક્ષા દરેક રોકાણથી શરૂ થાય છે — અને દરેક રોકાણ તમારા બ્રેક પર આધાર રાખે છે. HK.18 GARAGE માં અમે જાણીએ છીએ કે ચોકસાઈથી બ્રેકિંગ કેટલું મહત્વપૂર્ણ છે. અમારા નિષ્ણાત ટેકનિશિયન બ્રેક પેડ્સ, ડિસ્ક અને ફ્લૂઈડ્સની સંપૂર્ણ તપાસ, મરામત અને બદલાવ કરે છે જેથી દર વખતની બ્રેકિંગ સ્મૂથ અને સલામત હોય. તમે ટ્રાફિકમાં હોવ કે ખુલ્લી રસ્તાઓ પર, તમને સંપૂર્ણ નિયંત્રણ સાથે વિશ્વાસ હોવો જોઈએ. કોઈ ચેતવણીની રાહ ન જુઓ — તમારા બ્રેક્સની જવાબદારી અમને સોંપો અને નિરાંતે રાઈડ માણો. કારણ કે સુરક્ષા બાબતે અમે ક્યારેય સમજૂતી કરતા નથી.",
+   carburettor_desc_long: "શું તમારી બાઈકની પાવર ઘટી રહી છે, થોડી ધીમી લાગી રહી છે અથવા માઈલેજ ખરાબ થઈ ગયું છે? તેનુ મુખ્ય કારણ છે કાર્બ્યુરેટર. HK.18 GARAGE માં અમે તમારા એન્જિનના 'શ્વાસ' ને તાજગીથી ભર્યા છીએ — દરેક ભાગને સાફ કરીને, કાર્બન buildup દૂર કરીને અને એર-ફ્યુઅલ બેલેન્સને ફાઈન-ટ્યુન કરીને. તમારું થ્રોટલ રિસ્પોન્સ, એક્સેલરેશન અને એન્જિન હેલ્થમાં you'll અનુભવ કરો. ખરાબ કાર્બ્યુરેટર તમારી મોજ ઉઠાવી શકે છે — HK.18 GARAGE ને રિપ્રેશ કરવાની તક આપો.",
+   cooling_desc_long: "ઓવરહિટિંગ દરેક રાઈડર માટે મોટું જોખમ છે — પરંતુ HK.18 GARAGE એ તમારી બાઈકને ઠંડી રાખવાની સંપૂર્ણ ખાતરી આપે છે. અમારા કુશળ ટેકનિશિયન રેડિયેટર ફ્લશિંગથી લઈને કૂલન્ટ ટોપ-અપ અને ફેન ચેક સુધી દરેક પગલાંને સચોટ રીતે અનુસરે છે. ઠંડું એન્જિન એટલે વધારે ચાલક સમય, વધુ શાંતી અને સ્મૂથ રાઈડ. ગરમી તમારા આનંદનો વિઘ્ન ન બને — HK.18 GARAGE સાથે તમારી બાઈકને ઠંડી રાખો અને બિન્દાસ યાત્રા કરો.",
+   delivery_desc_long: "વિસ્તૃત શેડ્યૂલ? ગેરેજ સુધી જવા માટે સમય નથી? ચિંતા ન કરો — અમે તમારી પાસે આવી જઈશું! અમારી વિશ્વસનીય પિકઅપ અને ડ્રોપ સર્વિસથી તમારી બાઈકને સંપૂર્ણ કાળજી મળશે, તમારા દિવસના કામમાં વિઘ્ન ઊભું કર્યા વગર. તમે ઘરે હોવ, ઓફિસે હોવ કે સુરતના કોઈપણ ખૂણે હોવ — બસ એક સેવા બુક કરો અને બાકી બધું અમે Sambhaali લઈશું. તમારી બાઈક સલામત રીતે લાવવામાં આવશે, નિષ્ણાતો દ્વારા સર્વિસ આપવામાં આવશે અને સમયસર પાછી અપાશે — સ્મિત સાથે. આ માત્ર સુવિધા નથી, આ અમારી કાળજી છે. HK.18 GARAGE હંમેશા તૈયાર છે — જ્યાં જરૂર, ત્યારે હાજર. કારણ કે તમારું સમય કિંમતી છે અને તમારી સવારી શ્રેષ્ઠની હકદાર છે.",
+   electrical_desc_long: "હેડલાઈટ્સ ઝબકી રહી છે? હોર્ન બંધ છે? વાયરિંગ ખરાબ છે? નાની ઇલેક્ટ્રિકલ સમસ્યાઓને મોટી મુશ્કેલીઓમાં ફેરવાઈ ન જાય તે પહેલાં રોકો. HK.18 GARAGEમાં અમારા નિષ્ણાત ટેકનિશિયન દરેક પ્રકારની ઇલેક્ટ્રિકલ મરામતને ચોકસાઈથી અને કાળજીપૂર્વક કરે છે. ઇગ્નિશન સમસ્યા હોય કે લાઈટિંગની ખામીઓ હોય કે બેટરી વાયરિંગ ફોલ્ટ હોય — અમે તમારી બાઈકમાં ફરીથી સ્પાર્ક લાવીએ છીએ. દરેક રિપેર સાથે અમે ખાતરી કરીએ છીએ કે તમારી બાઈક સુરક્ષિત, વિશ્વસનીય અને સંપૂર્ણ રીતે કાર્યરત છે. તમારી બાઈકને તેજસ્વી અને તરત પ્રતિક્રિયા આપતી હોવી જોઈએ — અને HK.18 GARAGE એ તમારા માટે એ શક્તિ પાછી લાવે છે.",
+    engine_desc_long: "તમારી બાઈકનો એન્જિન એ તેનું હૃદય છે — અને જ્યારે એંજિન સઘન થાય છે, ત્યારે તમારી સવારી પણ ધીમી પડે છે. HK.18 GARAGEમાં અમે દરેક એન્જિનને એવી કાળજી અને પ્રેમથી સર્વિસ કરીએ છીએ જે તે લાયક છે. અજીબ અવાજો, પાવરમાં ઘટાડો, ઓવરહિટિંગ કે સ્ટાર્ટ ન થવું — અમે દરેક ખામીની ગંભીર તપાસ કરીએ છીએ. નાની મરામત હોય કે સંપૂર્ણ ઓવરહોલ — અમે એન્જિનને ફરી તાકાત આપીએ છીએ. જ્યારે એન્જિન સ્ફટિકસ્ફટ ધ્વનિ સાથે ચાલે છે, ત્યારે દરેક સફર વિશાળ અનુભવ બને છે. ભરોસાથી સવારી કરો — HK.18 GARAGE તમારા બાઈકના હ્રદયને ફરીથી ધબકતું બનાવશે.",
+    inspection_desc_long: "દરેક સવારીની પોતાની વાર્તા હોય છે — અને દરેક બાઈકને એક હેલ્થ ચેક અપ જરુરી છે જેથી એ વાર્તા સતત આગળ વધી શકે. HK.18 GARAGEનું જનરલ ઇન્સ્પેક્શન તમારા બે-પહિયા વાહન માટે સંપૂર્ણ હેલ્થ સ્કેન જેવું છે. બ્રેકથી લઈ લાઇટ, ટાયરથી લઈને સસ્પેન્શન સુધી અમે દરેક જરૂરી ભાગની નિષ્ણાત કાળજીથી તપાસ કરીએ છીએ. તમે લાંબી સફર પર જવા માંગો છો કે માત્ર શાંતિ મનમાં રાખવી હોય — અમે સુનિશ્ચિત કરીએ છીએ સલામતી, કાર્યક્ષમતા અને વિશ્વસનીયતા. સમસ્યાઓ મોટી બનતા પહેલા તેમનો પતાવો કરો — HK.18 GARAGE સાથે તમે હંમેશાં આગળ રહો.",
+     major_minor_desc_long: "તમારી બાઈક માત્ર એક સવારી નથી — તે કાળજીને લાયક છે. HK.18 GARAGE ની મેજર અને માઇનર સર્વિસીસ તમારા વાહનને જરૂર મુજબ પ્રેમ આપે છે — પછી ભલે તે નાની ટ્યુનિંગ હોય કે આખી બાઈકનું રિફ્રેશમેન્ટ. ઓઈલ બદલવાથી લઈ ફિલ્ટર ચેક, ડાયગ્નોસ્ટિકથી લઈ પાર્ટ બદલવા સુધી — દરેક સર્વિસને અમે દિલથી કરીએ છીએ. નાની સમસ્યા હોય તો એને મોટા બનતા પહેલા જ ઠીક કરીએ છીએ, અને મોટી સમસ્યાઓનું સંપૂર્ણ સોલ્યુશન આપીએ છીએ. HK.18 GARAGE સાથે દરેક બોલ્ટ વિશ્વાસપૂર્વક ટાઈટ થાય છે — અને સર્વિસ પચી એક સ્મિત સાથે પૂરી થાય છે — તમારું અને તમારી બાઈકનું. ❤️",
+     oil_desc_long: "એન્જિન ઓઈલ તમારા બાઈકનું લાઈફ બ્લડ છે. સમય સાથે તે ગંદું, થાકેલું અને અસર્જક બની જાય છે. HK.18 GARAGEમાં અમે માત્ર ઓઈલ બદલી નથી કરતા — અમે એન્જિનની આત્માને ફરી જીવંત કરીએ છીએ. 🛠️✨ પ્રીમિયમ ગ્રેડ ઓઈલ સાથે દરેક સવારી વધુ સ્મૂથ, દરેક થ્રોટલ વધુ શક્તિશાળી અને દરેક સ્ટાર્ટ વધુ આત્મવિશ્વાસભર્યું લાગે છે. હવે એન્જિન પર તાણ નહીં, ઓવરહીટિંગ નહીં — ફક્ત શુદ્ધ, શક્તિશાળી પરફોર્મન્સ. તમારી બાઈક ફરીથી સંપૂર્ણ રીતે શ્વાસ લે — અને વિશ્વાસ રાખો, તમારું એન્જિન દરેક નમ સમાંતરની પાછળ તમારું આભાર માનશે. 💨❤️",
+     purchase_desc_long: "બાઈક ખરીદવી એ માત્ર સોદો નથી — એ એક લાગણી છે, બે પહિયાં પર સપનું છે. પણ જો છુપાયેલી ખામીઓ હોય, તો એ સપનું પસ્તાવામાં ફેરવાઈ શકે છે. HK.18 GARAGE પર, અમારી પ્રી-પર્ચેસ ઇન્સ્પેક્શન સેવા તમને નિર્ભયતાથી સવારી શરૂ કરાવા માટે છે. 🛠️ અમે દરેક નટ, બોલ્ટ, એન્જિન ધબકારું, બ્રેકના દબાવ અને ઇલેક્ટ્રિકલ સર્કિટ્સ ચેક કરીએ છીએ અને તમને સંપૂર્ણ રિપોર્ટ આપીએ છીએ. કોઈ અચાનક નવાઈ નહીં — ફક્ત ઇમાનદારી અને નિષ્ણાત દ્રષ્ટિકોણ. પહેલી બાઈક હોય કે બીજા સપનાનું વાહન — HK.18 GARAGE તમારી મુસાફરી પહેલા દિવસથી જ સુરક્ષિત કરે છે. 💯✅ બુદ્ધિથી ખરીદો, સમજદારીથી સવારી કરો.",
+     shocks_desc_long: "ઝંજાવાતભર્યો રસ્તો તમારા સફરની મજા બગાડી શકે છે, પણ સ્મૂથ રિયર શૉક્સ ફરીથી રાઈડને મજા આપે છે. HK.18 GARAGE પર, અમે સમજીએ છીએ કે તમારી બાઈક તમને કેટલું આરામ આપવી જોઈએ — દરેક ધક્કો શોષાઈ જાય, દરેક વળાંક સ્ટેબલ રહે. ડેઈલી કમ્યૂટ હોય કે લાંબી મુસાફરી, ખોટા શૉક્સથી મુશ્કેલી વધી જાય છે. તેથી જ અમે તમારી રિયર સસ્પેન્શનની નિષ્ણાતીથી તપાસ, રિપેર અથવા બદલાવ કરીએ છીએ. 🛠️🧰 આત્મવિશ્વાસથી રાઈડ કરો, રસ્તાઓ પર સરકો — દરેક સફરને અનુભવવો જોઈએ, પોટહોલ્સને નહીં. આરામ, નિયંત્રણ અને કાળજી — એ જ અમે આપીએ છીએ. 💯🏁",
+     scooter_desc_long: "તમારું સ્કૂટર માત્ર વાહન નથી — તે તમારું દૈનિક સાથી છે. કપુરાની દોડમાંથી ડેઈલી ઓફિસ જવા સુધી, એ સ્મૂથ હેન્ડલિંગ, ઇન્સ્ટન્ટ સ્ટાર્ટ અને ટેન્શન-ફ્રી પરફોર્મન્સને લાયક છે. HK.18 GARAGEમાં અમે દરેક સ્કૂટરને આપણા જેવી કાળજીથી ટ્રીટ કરીએ છીએ. એન્જિન ટ્યુનિંગ હોય કે બ્રેક ચેક, ઓઈલ બદલવું હોય કે ઇલેક્ટ્રિકલ ફોલ્ટ — અમે બધું નિષ્ણાતીથી કરીએ છીએ. 🧰⚙️ નાની સમસ્યાઓને મોટી તકલીફમાં ન બદલાવા દો. તમારા સ્કૂટરને પ્રેમ આપો જે તે લાયક છે — અને દરેક વળાંકમાં એ સ્મૂથને અનુભવ કરો. અમે હંમેશા તમારા સ્કૂટરને રિલાયેબલ અને રેડી ટૂ રોલ રાખીએ છીએ. ❤️🛵",
+     all_desc_long: "HK.18 GARAGEમાં અમે ફક્ત બાઈક મરામત નથી કરતા — અમે તેને કુટુંબ સમજીને કાળજી રાખીએ છીએ. તમારા બે-પહિયાને માત્ર ઓઈલ ચેન્જ જોઈએ કે આખું એન્જિન ઓવરહોલ — અમે ઉત્સાહ, ચોકસાઈ અને ગર્વ સાથે તમને સર્વિસ કરીએ છીએ. 🧰💪 બેટરી ટેસ્ટિંગ 🔋થી લઈને કાર્બ્યુરેટર સાફ, બ્રેક રીપેર 🛑થી લઈને રિયર શૉક્સ સુધી — બધું એક જ જગ્યાએ. સ્કૂટર છે? અમે તેને પણ કવર કરીએ છીએ 🛵. પિકઅપ અને ડ્રોપ જોઈએ? અમે આવી જઈશું 🚚. દરેક નટ, દરેક બોલ્ટ, દરેક વાયર પર અમારી આખી નજર હોય છે — કેમ કે તમારી સુરક્ષા અને સંતોષ એ અમારું ધ્યેય છે ❤️. HK.18 GARAGEમાં દરેક સર્વિસ એક વચન છે — કે તમે હંમેશા સ્મૂથ, સુરક્ષિત અને ખુશીભેર રાઈડ કરો. 😊✨",
+     nav_heading: "⬇️પૃષ્ઠ જોવા માટે ક્લિક કરો⬇️",
+nav_about: "અમારા વિશે",
+nav_why_us: "શા માટે અમને પસંદ કરો",
+nav_services: "સેવાઓ",
+nav_gallery: "ગેલેરી",
+nav_indian_bikes: "ભારતીય બાઇક",
+nav_contact: "સંપર્ક કરો",
+nav_location: "સ્થળ",
+nav_feedback: "પ્રતિસાદ",
+nav_chat: "ચેટ",
+gallery_heading: "ગેલેરી",
+indian_bikes_heading: "બધી ભારતીય બાઈક્સ",
+view_indian_bikes_btn: "બધી ભારતીય બાઈક જુઓ",
+back_to_top_btn: "⬆ ઉપર જાઓ",
+contact_title: "સંપર્ક કરો",
+contact_phone: "ફોન:",
+contact_whatsapp: "વોટ્સએપ:",
+contact_whatsapp_link: "હમણાં ચેટ કરો",
+contact_youtube: "યૂટ્યુબ:",
+contact_youtube_link: "ચેનલ મુલાકાત લો",
+contact_instagram: "ઇન્સ્ટાગ્રામ:",
+contact_email: "ઇમેઇલ:",
+get_directions_btn: "📍 ગૂગલ મેપ્સ પર દિશાઓ મેળવો",
+find_us: "અમે ક્યાં છીએ",
+feedback_title: "પ્રતિસાદ અને રેટિંગ",
+feedback_text: "અમે તમારા પ્રતિસાદને મૂલ્ય આપીએ છીએ!",
+google_review_link: "Google સમીક્ષા આપવા માટે અહીં ક્લિક કરો",
+live_chat: "લાઈવ ચેટ",
+chat_name_placeholder: "તમારું નામ",
+chat_message_placeholder: "તમારું સંદેશ લખો...",
+send_button: "મોકલવો",
+},
+
+  en: {
+    our_services: "Our Services",
+    battery_desc: "Battery – Testing, replacement & maintenance for reliable performance.",
+    brake_desc: "Brake Service – Pads, full system check, smooth & safe braking.",
+    carburettor_desc: "Carburettor Cleaning – Tuning & restoration for fuel efficiency.",
+    cooling_desc: "Cooling System – Radiator & fan service to prevent overheating.",
+    delivery_desc: "Delivery – Pickup & drop bike service, anytime, anywhere.",
+    electrical_desc: "Electrical Repair – Lighting, ignition, battery, and wiring fixes.",
+    engine_desc: "Engine Repair – Diagnostics, overhauls & part replacement.",
+    inspection_desc: "General Inspection – Preventive checks for overall health.",
+    major_minor_desc: "Major/Minor Services – Complete bike care with attention to detail.",
+    oil_desc: "Oil Change – Premium oils for engine health.",
+    purchase_desc: "Pre-Purchase Inspection – Peace of mind before you buy.",
+    shocks_desc: "Rear Shocks – Repair & replacement for comfort.",
+    scooter_desc: "Scooter Services – Comprehensive care for all scooter types.",
+    all_desc: "All Services – From diagnostics to suspension repair and more.",
+    about_us: "About Us",
+    about_bio: "Bio: HK.18 GARAGE – Expert two-wheeler repair & service shop. Reliable, fast & affordable care for your ride. Your bike’s health, our priority!",
+    about_desc: "HK.18 Garage is your trusted destination for all two-wheeler needs, offering top-notch services and repairs for motorcycles and scooters. Our skilled technicians are equipped with the latest tools and expertise to ensure your ride stays in peak condition. Whether it’s routine maintenance, complex repairs, or custom modifications, we pride ourselves on delivering efficient, reliable, and affordable solutions. At HK.18 Garage, customer satisfaction is our priority, providing you with fast, friendly, and professional service every time. Keep your bike running smoothly with HK.18 Garage! Anytime anywhere we will pickup your bike and also drop your bike we are best service provider visit HK.18 garage, this is first garage promised for happyness.",
+    why_us: "Why Choose Us?",
+    why_us_desc: "Our service is our greatest strength. Our range of two-wheeler services is the most efficient and affordable in the market. We ensure that the satisfaction needle is always sliding to the right on the customer satisfaction meter.",
+    title_battery: "Battery",
+    title_carburettor: "Carburettor Cleaning",
+    title_cooling: "Cooling System",
+    title_delivery: "Delivery",
+    title_electrical: "Electrical Repair",
+    title_engine: "Engine Repair",
+    title_inspection: "General Inspection",
+    title_major_minor: "Major/Minor Services",
+    title_oil: "Oil Change",
+    title_purchase: "Pre-Purchase Inspection",
+    title_shocks: "Rear Shocks",
+    title_scooter: "Scooter Services",
+    title_all: "All Services",
+   battery_desc_long: "Your bike deserves a heart that never stops — and that heart is the battery. At HK.18 GARAGE, we don’t just test and replace batteries, we revive your ride’s soul. Whether it’s a quick start on a busy morning or a long journey ahead, our expert battery service ensures you never get stranded. Experience the peace of mind, the confidence, and the power to ride freely. Trust us to keep your journey alive — every start, every time.",
+    brake_desc_long: " Your safety begins with every stop — and every stop depends on your brakes. At HK.18 GARAGE, we understand how vital precise braking is. Our expert technicians thoroughly inspect, repair, and replace brake pads, discs, and fluids to ensure smooth, responsive, and safe braking every time. Whether you're riding through city traffic or cruising on open roads, you deserve the confidence that comes with perfect control. Don’t wait for a warning sign — let us care for your brakes, so you can ride with peace of mind, knowing your bike will stop exactly when it should. Because when it comes to safety, we never compromise.",
+    carburettor_desc_long: "Is your bike losing power, feeling sluggish, or giving you poor mileage? The heart of your bike’s performance lies in its carburettor. At HK.18 GARAGE, we treat your engine’s lungs with care — cleaning every part, removing dirt and carbon buildup, and fine-tuning it for optimal air-fuel balance. Feel the difference in throttle response, smooth acceleration, and overall engine health. Don’t let a dirty carburettor steal your joy of riding. Let us bring your bike back to life — because your machine deserves to breathe freely, and you deserve a ride that responds like it’s brand new.",
+    cooling_desc_long: "Overheating is every rider’s worst enemy, but we’ve got your back. Our expert cooling system service ensures your engine stays calm under pressure, even on the hottest Surat days. Whether it’s radiator flushing, coolant top-up, or fan checkup — we handle it all with precision and care. A cool engine means smoother performance, longer life, and worry-free rides. Don’t let heat steal your thrill — trust HK.18 GARAGE to keep your bike cool, calm, and unstoppable. Because your machine deserves to breathe easy, every mile of the way.",
+    delivery_desc_long: "Busy schedule? No time to visit the garage? Don’t worry — we’ll come to you! With our trusted pickup and drop delivery service, your bike gets the care it needs without interrupting your day. Whether you're at home, office, or anywhere in Surat, just book a service and we’ll handle the rest. Your two-wheeler will be safely picked up, serviced by experts, and returned on time — all with a smile. It’s not just convenience, it’s our promise of care. HK.18 GARAGE is here to serve you — anytime, anywhere. Because your time is precious and your ride deserves the best.",
+    electrical_desc_long: "Flickering headlights? Dead horn? Faulty wiring? Don’t let small electrical issues turn into big problems. At HK.18 GARAGE, our expert technicians handle all types of electrical repairs with precision and care. Whether it’s ignition trouble, lighting glitches, or battery wiring faults — we restore the spark your bike needs. With every fix, we ensure your ride is safe, reliable, and fully functional. Your bike deserves to shine bright and respond right. Let us power it back to life — because we know every connection counts.",
+    engine_desc_long: "Your engine is the heart of your bike — and when it struggles, so does your ride. At HK.18 GARAGE, we treat every engine with the care it deserves. From unusual noises to power drops, overheating, or starting issues, our experts dig deep to diagnose and repair every fault. Whether it’s a minor fix or a full overhaul, we restore your engine’s strength and soul. Because when your engine roars smoothly, every journey feels powerful again. Ride with confidence — let us bring your machine’s heart back to life.",
+     inspection_desc_long: "Every ride tells a story — and every bike deserves a health check to keep that story going strong. Our General Inspection is like a full-body scan for your two-wheeler. From brakes to lights, tyres to suspension, we inspect every vital part with expert precision. Whether you're planning a long ride or just want peace of mind, our check-up ensures safety, performance, and reliability. Don't wait for problems to surprise you — let HK.18 GARAGE catch them early and keep your bike smiling on every road.",
+     major_minor_desc_long: "Your bike deserves more than just a ride—it deserves care. Our Major and Minor Services give your machine the love it needs, whether it’s a small tune-up or a full-body transformation. From oil changes and filter checks to deep diagnostics and part replacements, we treat every service like a heartbeat check. Minor issues? We fix them before they grow. Major troubles? We bring your bike back to life. With HK.18 GARAGE, every bolt is tightened with trust, and every service ends with a smile—yours and your bike’s. ❤️",
+     oil_desc_long: "Think of engine oil as the lifeblood of your bike. Over time, it gets dirty, tired, and loses its magic. At HK.18 GARAGE, we don’t just change oil—we revive your engine’s spirit. 🛠️✨ With premium-grade oils, we ensure every ride feels smoother, every throttle more powerful, and every start confident. No more engine strain, no more overheating—just pure, powerful performance. Let your bike breathe freely again. Trust us, your engine will thank you with every smooth mile. 💨❤️",
+     purchase_desc_long: "Buying a bike is more than a deal—it's an emotion, a dream on two wheels. But hidden issues can turn that dream into regret. At HK.18 GARAGE, our Pre-Purchase Inspection ensures you ride away with confidence, not worries. 🛠️ We check every nut, bolt, engine pulse, brake bite, and electrical spark, giving you a full health report. No surprises—just honesty and expert judgment. Whether it's your first bike or the next one, trust us to protect your journey before it even begins. 💯✅ Ride smart, buy wise.",
+     shocks_desc_long: "A bumpy ride can ruin your journey, but smooth rear shocks bring back the joy of riding. At HK.18 GARAGE, we understand the comfort your bike should give—every bump absorbed, every turn stable. Whether it's a daily commute or a long trip, worn shocks make it harder and less safe. That’s why we inspect, repair, or replace your rear suspension with precision and care. 🛠️🧰 Ride with confidence, glide through the roads, and feel every journey—not every pothole. Comfort, control, and care—that’s what we deliver. 💯🏁",
+     scooter_desc_long: "Your scooter isn’t just a ride — it’s your everyday companion. From quick grocery runs to daily commutes, it deserves smooth handling, instant start, and hassle-free performance. At HK.18 GARAGE, we treat every scooter like it’s our own. Whether it’s engine tuning, brake check, oil change, or electric faults — we handle it all with expert care. 🧰⚙️ Don’t let small issues turn into big breakdowns. Give your scooter the love it needs and feel the smoothness in every turn. Trust us to keep your scooter reliable, efficient, and ready to roll — always. ❤️🛵",
+     all_desc_long: "At HK.18 GARAGE, we don’t just fix bikes — we care for them like family. Whether your two-wheeler needs a simple oil change or a complete engine overhaul, we’re here with passion, precision, and pride. 🧰💪 From battery testing 🔋 to carburettor cleaning, brake repairs 🛑 to rear shocks replacement, we handle it all under one roof. Got a scooter? We’ve got it covered too! 🛵 Need pickup and drop? We’ll come to you. 🚚 Every nut, every bolt, every cable gets our full attention — because your safety and satisfaction mean everything to us. ❤️ Let us inspect, repair, and restore your ride with care and dedication. At HK.18 GARAGE, every service is more than just a job — it’s a promise to keep you moving smoothly, safely, and with a smile. 😊✨",
+     nav_heading: "⬇️click to visit page⬇️",
+nav_about: "About",
+nav_why_us: "Why Us",
+nav_services: "Services",
+nav_gallery: "Gallery",
+nav_indian_bikes: "Indian Bikes",
+nav_contact: "Contact",
+nav_location: "Location",
+nav_feedback: "Feedback",
+nav_chat: "Chat",
+gallery_heading: "Gallery",
+indian_bikes_heading: "All Indian Bikes",
+view_indian_bikes_btn: "View All Indian Bikes",
+back_to_top_btn: "⬆ Back to Top",
+contact_title: "Contact",
+contact_phone: "Phone:",
+contact_whatsapp: "WhatsApp:",
+contact_whatsapp_link: "Chat Now",
+contact_youtube: "YouTube:",
+contact_youtube_link: "Visit Channel",
+contact_instagram: "Instagram:",
+contact_email: "Email:",
+get_directions_btn: "📍 Get Directions on Google Maps",
+find_us: "Find Us",
+feedback_title: "Feedback & Rating",
+feedback_text: "We value your feedback!",
+google_review_link: "Click here to leave a Google Review",
+live_chat: "Live Chat",
+chat_name_placeholder: "Your Name",
+chat_message_placeholder: "Type your message...",
+send_button: "Send" 
+}
+};
+</script>
+
+<script>
+function changeLanguage() {
+  const lang = document.getElementById("languageSelect").value;
+
+  // 🔁 Update all text elements with data-key
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // 📝 Update placeholders in inputs/textareas with data-placeholder-key
+  document.querySelectorAll("[data-placeholder-key]").forEach(el => {
+    const key = el.getAttribute("data-placeholder-key");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
+  // 🪟 Update modal title & description if modal is open
+  const modal = document.getElementById("serviceModal");
+  if (modal && modal.style.display === "flex") {
+    const titleEl = document.getElementById("modalTitle");
+    const descEl = document.getElementById("modalDesc");
+
+    const titleKey = titleEl.getAttribute("data-key");
+    const descKey = descEl.getAttribute("data-key");
+
+    if (translations[lang] && translations[lang][titleKey]) {
+      titleEl.textContent = translations[lang][titleKey];
+    }
+    if (translations[lang] && translations[lang][descKey]) {
+      descEl.textContent = translations[lang][descKey];
+    }
+  }
+}
+</script>
+
+<!-- 🌐 Language Selector -->
+<select id="languageSelect" onchange="changeLanguage()" style="
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  background: #66FCF1;
+  color: black;
+  font-weight: bold;
+  z-index: 9999;
+">
+  <option value="en">English</option>
+  <option value="hi">हिंदी</option>
+  <option value="gu">ગુજરાતી</option>
+</select>
+
+
+<script>
+ const serviceDetails = {
+  battery: {
+    titleKey: "battery_title",
+    descKey: "battery_desc",
+    title: "Battery🔋",
+    description: "Your bike deserves a heart that never stops — and that heart is the battery. At HK.18 GARAGE, we don’t just test and replace batteries, we revive your ride’s soul. Whether it’s a quick start on a busy morning or a long journey ahead, our expert battery service ensures you never get stranded. Experience the peace of mind, the confidence, and the power to ride freely. Trust us to keep your journey alive — every start, every time.",
+    images: ["battery 1.jpg", "battery 2.jpg"]
+  },
+  brake: {
+    titleKey: "brake_title",
+    descKey: "brake_desc",
+    title: "Brake Service 🛑",
+    description: "Your safety begins with every stop — and every stop depends on your brakes. At HK.18 GARAGE, we understand how vital precise braking is. Our expert technicians thoroughly inspect, repair, and replace brake pads, discs, and fluids to ensure smooth, responsive, and safe braking every time. Whether you're riding through city traffic or cruising on open roads, you deserve the confidence that comes with perfect control. Don’t wait for a warning sign — let us care for your brakes, so you can ride with peace of mind, knowing your bike will stop exactly when it should. Because when it comes to safety, we never compromise.",
+    images: ["brake service 1.jpg", "brake service 2.jpg", "brake service 3.jpg", "brake service 4.jpg"]
+  },
+  carburettor: {
+    titleKey: "carburettor_title",
+    descKey: "carburettor_desc",
+    title: "Carburettor Cleaning 🔧💨",
+    description: "Is your bike losing power, feeling sluggish, or giving you poor mileage? The heart of your bike’s performance lies in its carburettor. At HK.18 GARAGE, we treat your engine’s lungs with care — cleaning every part, removing dirt and carbon buildup, and fine-tuning it for optimal air-fuel balance. Feel the difference in throttle response, smooth acceleration, and overall engine health. Don’t let a dirty carburettor steal your joy of riding. Let us bring your bike back to life — because your machine deserves to breathe freely, and you deserve a ride that responds like it’s brand new.",
+    images: ["carburettor 1.jpg", "carburettor 2.jpg", "carburettor 3.jpg"]
+  },
+  cooling: {
+    titleKey: "cooling_title",
+    descKey: "cooling_desc",
+    title: "Cooling System ❄️",
+    description: "Overheating is every rider’s worst enemy, but we’ve got your back. Our expert cooling system service ensures your engine stays calm under pressure, even on the hottest Surat days. Whether it’s radiator flushing, coolant top-up, or fan checkup — we handle it all with precision and care. A cool engine means smoother performance, longer life, and worry-free rides. Don’t let heat steal your thrill — trust HK.18 GARAGE to keep your bike cool, calm, and unstoppable. Because your machine deserves to breathe easy, every mile of the way.",
+    images: ["cooling system 1.jpg", "cooling system 2.jpg", "cooling system 3.jpg"]
+  },
+  delivery: {
+    titleKey: "delivery_title",
+    descKey: "delivery_desc",
+    title: "Delivery 🚚",
+    description: "Busy schedule? No time to visit the garage? Don’t worry — we’ll come to you! With our trusted pickup and drop delivery service, your bike gets the care it needs without interrupting your day. Whether you're at home, office, or anywhere in Surat, just book a service and we’ll handle the rest. Your two-wheeler will be safely picked up, serviced by experts, and returned on time — all with a smile. It’s not just convenience, it’s our promise of care. HK.18 GARAGE is here to serve you — anytime, anywhere. Because your time is precious and your ride deserves the best.",
+    images: ["delivery 1.jpg", "delivery 2.jpg", "delivery 3.jpg"]
+  },
+    electrical: {
+   titleKey: "electrical_title",
+    descKey: "electrical_desc",
+      title: "Electrical Repair ⚡",
+      description: "Flickering headlights? Dead horn? Faulty wiring? Don’t let small electrical issues turn into big problems. At HK.18 GARAGE, our expert technicians handle all types of electrical repairs with precision and care. Whether it’s ignition trouble, lighting glitches, or battery wiring faults — we restore the spark your bike needs. With every fix, we ensure your ride is safe, reliable, and fully functional. Your bike deserves to shine bright and respond right. Let us power it back to life — because we know every connection counts.",
+   images: ["electrical repair 1.jpg", "electrical repair 2.jpg"]
+    },
+    engine: {
+    titleKey: "engine_title",
+    descKey: "engine_desc",
+      title: "Engine Repair 🛠️",
+      description: "Your engine is the heart of your bike — and when it struggles, so does your ride. At HK.18 GARAGE, we treat every engine with the care it deserves. From unusual noises to power drops, overheating, or starting issues, our experts dig deep to diagnose and repair every fault. Whether it’s a minor fix or a full overhaul, we restore your engine’s strength and soul. Because when your engine roars smoothly, every journey feels powerful again. Ride with confidence — let us bring your machine’s heart back to life.",
+    images: ["engine repair 1.jpg", "engine repair 2.jpg", "engine repair 3.jpg", "engine repair 4.jpg"]
+    },
+    inspection: {
+    titleKey: "inspection_title",
+    descKey: "inspection_desc",
+      title: "General Inspection 👀",
+      description: "Every ride tells a story — and every bike deserves a health check to keep that story going strong. Our General Inspection is like a full-body scan for your two-wheeler. From brakes to lights, tyres to suspension, we inspect every vital part with expert precision. Whether you're planning a long ride or just want peace of mind, our check-up ensures safety, performance, and reliability. Don't wait for problems to surprise you — let HK.18 GARAGE catch them early and keep your bike smiling on every road.",
+    images: ["general inspection 1.jpg"]
+    },
+    major_minor: {
+    titleKey: "major_minor_title",
+    descKey: "major_minor_desc", 
+      title: "Major/Minor Services 🧰",
+      description: "Your bike deserves more than just a ride—it deserves care. Our Major and Minor Services give your machine the love it needs, whether it’s a small tune-up or a full-body transformation. From oil changes and filter checks to deep diagnostics and part replacements, we treat every service like a heartbeat check. Minor issues? We fix them before they grow. Major troubles? We bring your bike back to life. With HK.18 GARAGE, every bolt is tightened with trust, and every service ends with a smile—yours and your bike’s. ❤️",
+   images: ["Major minor service 1.jpg", "Major minor service 2.jpg"]
+    },
+    oil: {
+    titleKey: "oil_title",
+    descKey: "oil_desc",
+      title: "Oil Change 🛢️",
+      description: "Think of engine oil as the lifeblood of your bike. Over time, it gets dirty, tired, and loses its magic. At HK.18 GARAGE, we don’t just change oil—we revive your engine’s spirit. 🛠️✨ With premium-grade oils, we ensure every ride feels smoother, every throttle more powerful, and every start confident. No more engine strain, no more overheating—just pure, powerful performance. Let your bike breathe freely again. Trust us, your engine will thank you with every smooth mile. 💨❤️",
+    images: ["oil 1.jpg", "oil 2.jpg", "oil 3.jpg"]
+    },
+    purchase: {
+    titleKey: "purchase_title",
+    descKey: "purchase_desc",
+      title: "Pre-Purchase Inspection 📋",
+      description: "Buying a bike is more than a deal—it's an emotion, a dream on two wheels. But hidden issues can turn that dream into regret. At HK.18 GARAGE, our Pre-Purchase Inspection ensures you ride away with confidence, not worries. 🛠️ We check every nut, bolt, engine pulse, brake bite, and electrical spark, giving you a full health report. No surprises—just honesty and expert judgment. Whether it's your first bike or the next one, trust us to protect your journey before it even begins. 💯✅ Ride smart, buy wise.",
+    images: []
+    },
+    shocks: {
+    titleKey: "shocks_title",
+    descKey: "shocks_desc",
+      title: "Rear Shocks 🪛 ",
+      description: "A bumpy ride can ruin your journey, but smooth rear shocks bring back the joy of riding. At HK.18 GARAGE, we understand the comfort your bike should give—every bump absorbed, every turn stable. Whether it's a daily commute or a long trip, worn shocks make it harder and less safe. That’s why we inspect, repair, or replace your rear suspension with precision and care. 🛠️🧰 Ride with confidence, glide through the roads, and feel every journey—not every pothole. Comfort, control, and care—that’s what we deliver. 💯🏁",
+   images: ["rear shock 1.jpg", "rear shock 2.jpg", "rear shock 3.jpg"]
+    },
+    scooter: {
+    titleKey: "scooter_title",
+    descKey: "scooter_desc",
+      title: "Scooter Services 🛵",
+      description: "Your scooter isn’t just a ride — it’s your everyday companion. From quick grocery runs to daily commutes, it deserves smooth handling, instant start, and hassle-free performance. At HK.18 GARAGE, we treat every scooter like it’s our own. Whether it’s engine tuning, brake check, oil change, or electric faults — we handle it all with expert care. 🧰⚙️ Don’t let small issues turn into big breakdowns. Give your scooter the love it needs and feel the smoothness in every turn. Trust us to keep your scooter reliable, efficient, and ready to roll — always. ❤️🛵",
+    images: ["scooter service 1.jpg", "scooter service 2.jpg", "scooter service 3.jpg"]
+    },
+    all: {
+    titleKey: "all_title",
+    descKey: "all_desc",
+      title: "All Services 🧑‍🔧",
+      description: "At HK.18 GARAGE, we don’t just fix bikes — we care for them like family. Whether your two-wheeler needs a simple oil change or a complete engine overhaul, we’re here with passion, precision, and pride. 🧰💪 From battery testing 🔋 to carburettor cleaning, brake repairs 🛑 to rear shocks replacement, we handle it all under one roof. Got a scooter? We’ve got it covered too! 🛵 Need pickup and drop? We’ll come to you. 🚚 Every nut, every bolt, every cable gets our full attention — because your safety and satisfaction mean everything to us. ❤️ Let us inspect, repair, and restore your ride with care and dedication. At HK.18 GARAGE, every service is more than just a job — it’s a promise to keep you moving smoothly, safely, and with a smile. 😊✨",
+   images: ["all service 1.jpg", "all service 2.jpg", "all service 3.jpg"]
+    }
+  };
+
+  // Step 2: Open modal with service info
+  function openModal(serviceKey) {
+  const modal = document.getElementById("serviceModal");
+  const data = serviceDetails[serviceKey];
+
+  // 👇 Get currently selected language from dropdown
+  const lang = document.getElementById("languageSelect").value;
+
+  // 👇 Create translation keys
+  const titleKey = `title_${serviceKey}`;
+  const descKey = `${serviceKey}_desc_long`;
+
+  // 👇 Set modal title with current language
+  const titleText = translations[lang][titleKey] || translations["en"][titleKey];
+  const descText = translations[lang][descKey] || translations["en"][descKey];
+
+  // 👇 Apply text and data-keys
+  const titleEl = document.getElementById("modalTitle");
+  const descEl = document.getElementById("modalDesc");
+
+  titleEl.textContent = titleText;
+  titleEl.setAttribute("data-key", titleKey);
+
+  descEl.textContent = descText;
+  descEl.setAttribute("data-key", descKey);
+
+  // 👇 Clear old images
+  const imagesContainer = document.getElementById("modalImages");
+  imagesContainer.innerHTML = "";
+
+  // 👇 Add new images
+  if (data.images && data.images.length > 0) {
+    data.images.forEach(img => {
+      const image = document.createElement("img");
+      image.src = img;
+      image.style.width = "100px";
+      image.style.margin = "5px";
+      image.style.borderRadius = "10px";
+      imagesContainer.appendChild(image);
+    });
+  }
+
+  modal.style.display = "flex";
+}
+
+  // Step 3: Close modal
+  function closeModal() {
+    document.getElementById("serviceModal").style.display = "none";
+  }
+
+  // Step 4: Attach click events to all service cards
+  document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const serviceKey = card.getAttribute("data-service");
+      if (serviceDetails[serviceKey]) {
+        openModal(serviceKey);
+      }
+    });
+  });
+</script>
 </body>
 
 
