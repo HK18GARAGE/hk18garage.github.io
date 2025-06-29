@@ -2,40 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>function openModal(serviceKey) {
-  const modal = document.getElementById("serviceModal");
-  const data = serviceDetails[serviceKey];
-
-  // Define translation keys
-  const titleKey = `title_${serviceKey}`;
-  const descKey = `${serviceKey}_desc_long`;
-
-  // Set text and data-key for title and description
-  document.getElementById("modalTitle").textContent = translations.en[titleKey];
-  document.getElementById("modalTitle").setAttribute("data-key", titleKey);
-
-  document.getElementById("modalDesc").textContent = translations.en[descKey];
-  document.getElementById("modalDesc").setAttribute("data-key", descKey);
-
-  // Clear old images
-  const imagesContainer = document.getElementById("modalImages");
-  imagesContainer.innerHTML = "";
-
-  // Load new images
-  if (data.images && data.images.length > 0) {
-    data.images.forEach(img => {
-      const image = document.createElement("img");
-      image.src = img;
-      image.style.width = "100px";
-      image.style.margin = "5px";
-      image.style.borderRadius = "10px";
-      imagesContainer.appendChild(image);
-    });
-  }
-
-  modal.style.display = "flex";
-} 
-HK.18 GARAGE | Best Two-Wheeler Repair & Service in Surat</title>
+<title>HK.18 GARAGE | Best Two-Wheeler Repair & Service in Surat</title>
   <meta name="description" content="Fast, Reliable & Professional Motorcycle Service in Surat. HK.18 GARAGE offers expert two-wheeler repair, pickup-drop, scooter and bike service." />
   <meta name="keywords" content="bike service Surat, two wheeler repair, scooter mechanic, HK.18 garage, motorcycle maintenance">
   <meta name="author" content="HK.18 GARAGE">
@@ -45,9 +12,20 @@ HK.18 GARAGE | Best Two-Wheeler Repair & Service in Surat</title>
   <meta property="og:title" content="HK.18 GARAGE - Best Bike Repair in Surat" />
 <meta property="og:description" content="Fast, Reliable & Professional Motorcycle Service — Right Here in Surat!" />
 <meta property="og:image" content="logo2.png" />
+<link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css" rel="stylesheet" />
+<style>
+  .lg-toolbar {
+    display: flex !important;
+  }
+  .lg-close {
+    display: block !important;
+    font-size: 22px !important;
+    color: white !important;
+    z-index: 99999 !important;
+  }
+</style>
 <meta property="og:url" content="https://hk18garage.github.io" />
   <link rel="icon" type="image/png" href="logo2.png">
-  <link rel
  </head>
   <style>
 html {
@@ -605,13 +583,13 @@ img {
   gtag('js', new Date());
   gtag('config', 'G-00EC4X6L7G');
 </script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js">
-</script>
 
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
 <script>
   lightGallery(document.getElementById('lightgallery'), {
     plugins: [lgZoom],
+    selector: 'a',
     speed: 500,
     zoom: true,
     download: false
