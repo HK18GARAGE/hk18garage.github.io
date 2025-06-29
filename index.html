@@ -13,20 +13,9 @@
 <meta property="og:description" content="Fast, Reliable & Professional Motorcycle Service — Right Here in Surat!" />
 <meta property="og:image" content="logo2.png" />
 <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css" rel="stylesheet" />
-<style>
-  .lg-toolbar {
-    display: flex !important;
-  }
-  .lg-close {
-    display: block !important;
-    font-size: 22px !important;
-    color: white !important;
-    z-index: 99999 !important;
-  }
-</style>
 <meta property="og:url" content="https://hk18garage.github.io" />
-  <link rel="icon" type="image/png" href="logo2.png">
- </head>
+  <link rel="icon" type="image/png" href="logo2.png"> 
+</head>
   <style>
 html {
   scroll-behavior: smooth;
@@ -119,8 +108,35 @@ img {
       padding: 15px;
       margin: 10px 0;
       border-left: 4px solid #C30010;
-    }
-</style>
+  }
+  .lg-toolbar {
+    display: flex !important;
+    justify-content: flex-end !important;
+    background: transparent !important;
+    z-index: 99999 !important;
+  }
+
+  .lg-close {
+    display: block !important;
+    font-size: 38px !important;
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 15px !important;
+    z-index: 999999 !important;
+    opacity: 1 !important; 
+  }
+
+  .lg-container {
+    z-index: 999999 !important; 
+  }
+
+  .lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.95) !important; 
+  }
+</style>  
 
 <body>
   <header>
@@ -380,7 +396,9 @@ img {
     <a href="95.jpg"><img src="95.jpg" alt="95" loading="lazy"></a>
     <a href="96.jpg"><img src="96.jpg" alt="96" loading="lazy"></a>
     <a href="97.jpg"><img src="97.jpg" alt="97" loading="lazy"></a>
-    <a href="98.jpg"><img src="98.jpg" alt="98" loading="lazy"></a>
+    <a href="98.jpg"><img src="98.jpg" alt="98" loading="lazy"></a> 
+    <a href="99.jpg"><img src="99.jpg" alt="99" loading="lazy"></a> 
+    <a href="100.jpg"><img src="100.jpg" alt="100" loading="lazy"></a>
   </div>
 </section>
 
@@ -584,17 +602,6 @@ img {
   gtag('config', 'G-00EC4X6L7G');
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-<script>
-  lightGallery(document.getElementById('lightgallery'), {
-    plugins: [lgZoom],
-    selector: 'a',
-    speed: 500,
-    zoom: true,
-    download: false
-  });
-</script>
 
   <!-- 👑 Owner Modal -->
 <div id="ownerModal" class="owner-modal hidden">
@@ -1157,7 +1164,22 @@ function changeLanguage() {
       }
     });
   });
+</script>  
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+<script>
+ lightGallery(document.getElementById('lightgallery'), {
+  plugins: [lgZoom],
+  selector: 'a',
+  speed: 500,
+  zoom: true,
+  download: false,
+  showCloseIcon: true
+});
 </script>
+
 </body>
 
 
