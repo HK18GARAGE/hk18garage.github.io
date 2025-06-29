@@ -542,12 +542,12 @@ img {
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
   
 <script>
-  // Your Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyAvomcoTyJXl100XopgZrtcFIF0SZ8jv54",
     authDomain: "hk18-garage-messages.firebaseapp.com",
+    databaseURL: "https://hk18-garage-messages-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "hk18-garage-messages",
-    storageBucket: "hk18-garage-messages.firebaseapp.com",
+    storageBucket: "hk18-garage-messages.appspot.com",
     messagingSenderId: "579918515994",
     appId: "1:579918515994:web:6ee807a581622385afa6a3",
     measurementId: "G-00EC4X6L7G"
@@ -566,7 +566,8 @@ img {
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
   });
-</script>
+</script> 
+
 <script>
   function sendMessage() {
     const name = document.getElementById("chatName").value.trim();
