@@ -1214,6 +1214,36 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; padding:10px; background:red; color:white; border:none; border-radius:8px;">
+  📲 Add to Home Screen
+</button>
+
+ <script>
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show your own custom "Add to Home" button
+  const installBtn = document.getElementById('installBtn');
+  installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none';
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+</script>
+
 </body>
 
 
