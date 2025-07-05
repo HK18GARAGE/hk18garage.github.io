@@ -21,6 +21,8 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="logo.webp">
+   <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#e60000">
 </head>
 
   <style>
@@ -1192,6 +1194,24 @@ all: {
   download: false,
   showCloseIcon: true
 });
+</script>
+
+<!-- Floating WhatsApp and Call Buttons (Bottom Left, Smaller Size) -->
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;">
+  <a href="https://wa.me/918488008843" target="_blank" title="Chat on WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" style="width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+  </a>
+  <a href="tel:+918488008843" title="Call Now">
+    <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="Call" style="width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); background: white;">
+  </a>
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(err => console.error("❌ Service Worker failed:", err));
+}
 </script>
 
 </body>
