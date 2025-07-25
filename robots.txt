@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hk18garage.github.io/sitemap.xml
