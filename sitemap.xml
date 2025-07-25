@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://hk18garage.github.io/</loc>
-    <lastmod>2025-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2025-07-25</lastmod>
+    <priority>1.00</priority>
   </url>
+
   <url>
-    <loc>https://hk18garage.github.io/#about</loc>
+    <loc>https://hk18garage.github.io/gallery.html</loc>
+    <lastmod>2025-07-25</lastmod>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://hk18garage.github.io/#services</loc>
+    <loc>https://hk18garage.github.io/services.html</loc>
+    <lastmod>2025-07-25</lastmod>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://hk18garage.github.io/#gallery</loc>
+    <loc>https://hk18garage.github.io/offers.html</loc>
+    <lastmod>2025-07-25</lastmod>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://hk18garage.github.io/#indian-bikes</loc>
+    <loc>https://hk18garage.github.io/contact.html</loc>
+    <lastmod>2025-07-25</lastmod>
+    <priority>0.70</priority>
   </url>
-  <url>
-    <loc>https://hk18garage.github.io/#contact</loc>
-  </url>
-  <url>
-    <loc>https://hk18garage.github.io/#feedback</loc>
-  </url>
+
 </urlset>
