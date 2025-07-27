@@ -1,6 +1,6 @@
 {
   "name": "HK.18 GARAGE",
-  "short_name": "HK18",
+  "short_name": "HK.18 GARAGE",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#000000",
@@ -12,4 +12,4 @@
       "type": "image/webp"
     }
   ]
-}
+} 
