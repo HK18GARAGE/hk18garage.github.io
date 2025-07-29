@@ -74,7 +74,77 @@ img {
 
    }
 
+/* Light Theme */
+body.light {
+  background: #ffffff;
+  color: #000;
+}
 
+/* Dark Theme */
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+
+/* Machinery Theme */
+body.machinery {
+  background: #1a1a1a url('gears-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+}
+
+/* flower Theme */
+body.flower {
+  background: #1a1a1a url('flower.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+}
+
+/* spiritual Theme */
+body.spiritual{
+  background: #1a1a1a url('spiritual.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+}
+
+
+/* sci-fi Theme */
+body.sci-fi {
+  background: #1a1a1a url('sci-fi.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #F4F5F0;
+}
+
+/* golden Theme */
+body.golden {
+  background: #1a1a1a url('golden.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #F4F5F0;
+}
+
+/* green Theme */
+body.green {
+  background: #1a1a1a url('green.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #F4F5F0;
+}
+
+/* Blue-Black Theme */
+body.blueblack {
+  background: #0d1b2a;
+  color: #d1d9e6;
+}
+
+/* Red Theme */
+body.Red {
+  background: #8B0000;
+  color: #fff;
+}
+if (savedTheme) {
+  changeTheme(savedTheme);
+} else {
+  changeTheme('dark'); // or 'machinery' as default
+}
 
 #why-us {
   background-color: #1F2833;
@@ -145,6 +215,7 @@ img {
   .lg-backdrop {
     background-color: rgba(0, 0, 0, 0.95) !important; 
   }
+
 </style>  
   
  <body>
@@ -152,6 +223,20 @@ img {
     <img src="logo2.webp" alt="HK.18 GARAGE Logo" style="max-width: 250px; display: block; margin: 0 auto 0px;" />
     <h1>HK.18 GARAGE</h1>
     <p>Fast, Reliable & Professional Motorcycle Service — Right Here in Surat!</p>
+  <!-- Theme Changer Dropdown -->
+<select id="themeSelector" onchange="changeTheme(this.value)">
+  <option value="dark">🌑 Dark Theme</option>
+  <option value="light">🌞 Light Theme</option>
+  <option value="machinery">⚙️ Machinery Theme</option>
+  <option value="flower">🌷 Flower Theme</option>
+  <option value="spiritual">🌼  Spiritual Theme</option>
+  <option value="sci-fi">🧪 Sci-Fi Theme</option>
+  <option value="golden">💛 Golden Theme</option>
+  <option value="green">🟢 Green Theme</option>
+  <option value="blueblack">🔵 Blue-Black Theme</option>
+  <option value="Red"> 🔴 Red Theme</option>
+
+</select>
   </header>
 
 <nav>
@@ -200,60 +285,59 @@ img {
 <section id="services" class="section">
   <h2 data-key="our_services">Our Services</h2>
 
-  <div class="service-card" data-service="battery" data-key="battery_desc">
-    Battery – Testing, replacement & maintenance for reliable performance.
-  </div>
-
+<div class="service-card" data-service="battery" data-key="battery_desc">
+  Battery – Testing, replacement & maintenance for reliable performance... Read more 
+</div>
   <div class="service-card" data-service="brake" data-key="brake_desc">
-    Brake Service – Pads, full system check, smooth & safe braking.
+    Brake Service – Pads, full system check, smooth & safe braking... Read more
   </div>
 
   <div class="service-card" data-service="carburettor" data-key="carburettor_desc">
-    Carburettor Cleaning – Tuning & restoration for fuel efficiency.
+    Carburettor Cleaning – Tuning & restoration for fuel efficiency... Read more
   </div>
 
   <div class="service-card" data-service="cooling" data-key="cooling_desc">
-    Cooling System – Radiator & fan service to prevent overheating.
+    Cooling System – Radiator & fan service to prevent overheating... Read more
   </div>
 
   <div class="service-card" data-service="delivery" data-key="delivery_desc">
-    Delivery – Pickup & drop bike service, anytime, anywhere.
+    Delivery – Pickup & drop bike service, anytime, anywhere... Read more
   </div>
 
   <div class="service-card" data-service="electrical" data-key="electrical_desc">
-    Electrical Repair – Lighting, ignition, battery, and wiring fixes.
+    Electrical Repair – Lighting, ignition, battery, and wiring fixes... Read more
   </div>
 
   <div class="service-card" data-service="engine" data-key="engine_desc">
-    Engine Repair – Diagnostics, overhauls & part replacement.
+    Engine Repair – Diagnostics, overhauls & part replacement... Read more
   </div>
 
   <div class="service-card" data-service="inspection" data-key="inspection_desc">
-    General Inspection – Preventive checks for overall health.
+    General Inspection – Preventive checks for overall health... Read more
   </div>
 
   <div class="service-card" data-service="major_minor" data-key="major_minor_desc">
-    Major/Minor Services – Complete bike care with attention to detail.
+    Major/Minor Services – Complete bike care with attention to detail... Read more
   </div>
 
   <div class="service-card" data-service="oil" data-key="oil_desc">
-    Oil Change – Premium oils for engine health.
+    Oil Change – Premium oils for engine health... Read more
   </div>
 
   <div class="service-card" data-service="purchase" data-key="purchase_desc">
-    Pre-Purchase Inspection – Peace of mind before you buy.
+    Pre-Purchase Inspection – Peace of mind before you buy... Read more
   </div>
 
   <div class="service-card" data-service="shocks" data-key="shocks_desc">
-    Rear Shocks – Repair & replacement for comfort.
+    Rear Shocks – Repair & replacement for comfort... Read more
   </div>
 
   <div class="service-card" data-service="scooter" data-key="scooter_desc">
-    Scooter Services – Comprehensive care for all scooter types.
+    Scooter Services – Comprehensive care for all scooter types... Read more
   </div>
 
   <div class="service-card" data-service="all" data-key="all_desc">
-    All Services – From diagnostics to suspension repair and more.
+    All Services – From diagnostics to suspension repair and more... Read more
   </div>
 </section>
 <section id="gallery" class="section">
@@ -710,20 +794,20 @@ img {
 const translations = {
   hi: {
     our_services: "हमारी सेवाएं",
-    battery_desc: "बैटरी – परीक्षण, रिप्लेसमेंट और रख-रखाव",
-    brake_desc: "ब्रेक सर्विस – पैड, पूरी जांच, सुरक्षित ब्रेकिंग",
-    carburettor_desc: "कार्बोरेटर क्लीनिंग – ट्यूनिंग और फ्यूल एफिशिएंसी",
-    cooling_desc: "कूलिंग सिस्टम – रेडिएटर और फैन सर्विस",
-    delivery_desc: "डिलीवरी – पिकअप और ड्रॉप बाइक सेवा",
-    electrical_desc: "इलेक्ट्रिकल रिपेयर – लाइटिंग, इग्निशन, वायरिंग सुधार",
-    engine_desc: "इंजन रिपेयर – डायग्नोस्टिक, ओवरहॉल और पार्ट बदलना",
-    inspection_desc: "जनरल इंस्पेक्शन – बाइक की समग्र स्थिति की जांच",
-    major_minor_desc: "मेजर/माइनर सर्विस – पूरी बाइक केयर",
-    oil_desc: "ऑयल चेंज – इंजन की सेहत के लिए प्रीमियम ऑयल",
-    purchase_desc: "प्री-पर्चेस इंस्पेक्शन – खरीद से पहले शांति",
-    shocks_desc: "रियर शॉक्स – मरम्मत और बदलाव से आरामदायक राइड",
-    scooter_desc: "स्कूटर सर्विस – सभी प्रकार के स्कूटर की सेवा",
-    all_desc: "सभी सेवाएं – डायग्नोस्टिक से सस्पेंशन रिपेयर तक",
+    battery_desc: "बैटरी – परीक्षण, रिप्लेसमेंट और रख-रखाव... और पढ़ें",
+    brake_desc: "ब्रेक सर्विस – पैड, पूरी जांच, सुरक्षित ब्रेकिंग... और पढ़ें",
+    carburettor_desc: "कार्बोरेटर क्लीनिंग – ट्यूनिंग और फ्यूल एफिशिएंसी... और पढ़ें",
+    cooling_desc: "कूलिंग सिस्टम – रेडिएटर और फैन सर्विस... और पढ़ें",
+    delivery_desc: "डिलीवरी – पिकअप और ड्रॉप बाइक सेवा... और पढ़ें",
+    electrical_desc: "इलेक्ट्रिकल रिपेयर – लाइटिंग, इग्निशन, वायरिंग सुधार... और पढ़ें",
+    engine_desc: "इंजन रिपेयर – डायग्नोस्टिक, ओवरहॉल और पार्ट बदलना... और पढ़ें",
+    inspection_desc: "जनरल इंस्पेक्शन – बाइक की समग्र स्थिति की जांच... और पढ़ें",
+    major_minor_desc: "मेजर/माइनर सर्विस – पूरी बाइक केयर... और पढ़ें",
+    oil_desc: "ऑयल चेंज – इंजन की सेहत के लिए प्रीमियम ऑयल... और पढ़ें",
+    purchase_desc: "प्री-पर्चेस इंस्पेक्शन – खरीद से पहले शांति... और पढ़ें",
+    shocks_desc: "रियर शॉक्स – मरम्मत और बदलाव से आरामदायक राइड... और पढ़ें",
+    scooter_desc: "स्कूटर सर्विस – सभी प्रकार के स्कूटर की सेवा... और पढ़ें",
+    all_desc: "सभी सेवाएं – डायग्नोस्टिक से सस्पेंशन रिपेयर तक... और पढ़ें",
     about_us: "हमारे बारे में",
     about_bio: "बायो: HK.18 GARAGE – दोपहिया वाहनों की विशेषज्ञ मरम्मत और सेवा। आपकी सवारी के लिए भरोसेमंद, तेज़ और किफायती देखभाल। आपकी बाइक की सेहत, हमारी प्राथमिकता!",
     about_desc: "HK.18 गैरेज आपके दोपहिया वाहन की सभी जरूरतों के लिए भरोसेमंद जगह है, जो मोटरसाइकिल और स्कूटर की बेहतरीन सेवा और मरम्मत प्रदान करता है। हमारे कुशल तकनीशियन नवीनतम उपकरणों और विशेषज्ञता से लैस हैं ताकि आपकी सवारी हमेशा बेहतर स्थिति में बनी रहे। सामान्य रख-रखाव हो या जटिल मरम्मत या फिर कस्टम मोडिफिकेशन — हम तेज़, विश्वसनीय और किफायती समाधान प्रदान करने में गर्व महसूस करते हैं। HK.18 गैरेज में ग्राहक की संतुष्टि हमारी प्राथमिकता है। आपकी बाइक की देखभाल के लिए हम हर समय तैयार हैं। हम बाइक पिकअप और ड्रॉप की सुविधा भी देते हैं। HK.18 गैरेज पहला ऐसा गैरेज है जो खुशी की गारंटी देता है।",
@@ -792,20 +876,20 @@ send_button: "भेजें",
 
   gu: {
     our_services: "અમારી સેવાઓ",
-    battery_desc: "બેટરી – ટેસ્ટિંગ, રિપ્લેસમેન્ટ અને જાળવણી",
-    brake_desc: "બ્રેક સર્વિસ – પેડ્સ, સંપૂર્ણ ચેક અને સલામત બ્રેકિંગ",
-    carburettor_desc: "કાર્બ્યુરેટર સાફ – ટ્યુનિંગ અને ફ્યુઅલ બચત",
-    cooling_desc: "કૂલિંગ સિસ્ટમ – રેડિયેટર અને ફેન સર્વિસ",
-    delivery_desc: "ડિલિવરી – બાઈક પિકઅપ અને ડ્રોપ સર્વિસ",
-    electrical_desc: "ઇલેક્ટ્રિકલ રીપેર – લાઈટિંગ, બેટરી અને વાયરિંગ",
-    engine_desc: "એન્જિન રીપેર – ચેકઅપ, ઓવરહોલ અને પાર્ટ બદલવો",
-    inspection_desc: "સામાન્ય નિરીક્ષણ – સંપૂર્ણ બાઈક તપાસ",
-    major_minor_desc: "મેઝર/માઇનર સર્વિસ – સંપૂર્ણ બાઈક કાળજી",
-    oil_desc: "તેલ બદલવું – એન્જિન માટે શ્રેષ્ઠ ઓઈલ",
-    purchase_desc: "પર્ચેસ પહેલા નિરીક્ષણ – નિર્વિવાદ ખરીદી માટે",
-    shocks_desc: "રીયર શૉક્સ – આરામદાયક સવારી માટે રીપેર અને બદલાવ",
-    scooter_desc: "સ્કૂટર સર્વિસ – દરેક પ્રકારના સ્કૂટર માટે",
-    all_desc: "બધી સેવાઓ – ડાયગ્નોસ્ટિકથી લઈને સસ્પેન્શન રીપેર સુધી",
+    battery_desc: "બેટરી – ટેસ્ટિંગ, રિપ્લેસમેન્ટ અને જાળવણી... વધુ વાંચો",
+    brake_desc: "બ્રેક સર્વિસ – પેડ્સ, સંપૂર્ણ ચેક અને સલામત બ્રેકિંગ... વધુ વાંચો",
+    carburettor_desc: "કાર્બ્યુરેટર સાફ – ટ્યુનિંગ અને ફ્યુઅલ બચત... વધુ વાંચો",
+    cooling_desc: "કૂલિંગ સિસ્ટમ – રેડિયેટર અને ફેન સર્વિસ... વધુ વાંચો",
+    delivery_desc: "ડિલિવરી – બાઈક પિકઅપ અને ડ્રોપ સર્વિસ... વધુ વાંચો",
+    electrical_desc: "ઇલેક્ટ્રિકલ રીપેર – લાઈટિંગ, બેટરી અને વાયરિંગ... વધુ વાંચો",
+    engine_desc: "એન્જિન રીપેર – ચેકઅપ, ઓવરહોલ અને પાર્ટ બદલવો... વધુ વાંચો",
+    inspection_desc: "સામાન્ય નિરીક્ષણ – સંપૂર્ણ બાઈક તપાસ... વધુ વાંચો",
+    major_minor_desc: "મેઝર/માઇનર સર્વિસ – સંપૂર્ણ બાઈક કાળજી... વધુ વાંચો",
+    oil_desc: "તેલ બદલવું – એન્જિન માટે શ્રેષ્ઠ ઓઈલ... વધુ વાંચો",
+    purchase_desc: "પર્ચેસ પહેલા નિરીક્ષણ – નિર્વિવાદ ખરીદી માટે... વધુ વાંચો",
+    shocks_desc: "રીયર શૉક્સ – આરામદાયક સવારી માટે રીપેર અને બદલાવ... વધુ વાંચો",
+    scooter_desc: "સ્કૂટર સર્વિસ – દરેક પ્રકારના સ્કૂટર માટે... વધુ વાંચો",
+    all_desc: "બધી સેવાઓ – ડાયગ્નોસ્ટિકથી લઈને સસ્પેન્શન રીપેર સુધી... વધુ વાંચો",
     about_us: "અમારા વિશે",
     about_bio: "બાયો: HK.18 GARAGE – બે-પહિયા વાહનોની નિષ્ણાત સેવા અને મરામત. વિશ્વસનીય, ઝડપી અને ખર્ચ અસરકારક. તમારી બાઈકના આરોગ્ય માટે અમારી પ્રતિબદ્ધતા!",
     about_desc: "HK.18 ગેરેજ એ તમારી બે-પહિયા જરૂરીયાતોની વિશ્વસનીય જગ્યા છે, જે મોટરસાયકલ અને સ્કૂટરની શ્રેષ્ઠ સેવાઓ અને મરામત આપે છે. અમારા કુશળ ટેકનિશિયન નવીનતમ સાધનો અને નિષ્ણાતીથી સજ્જ છે જેથી તમારી બાઈક સંપૂર્ણ હાલતમાં રહે. સામાન્ય સર્વિસ હોય કે મોટી રીપેર, અમે ઝડપી, વિશ્વસનીય અને ખર્ચ અસરકારક ઉકેલો આપીએ છીએ. HK.18 ગેરેજમાં ગ્રાહક સંતોષ એ અમારું મુખ્ય લક્ષ્ય છે. અમે દરેક વખતે દોસ્તીભરી અને વ્યવસાયિક સેવા આપીએ છીએ. બાઈક માટે પિકઅપ અને ડ્રોપ સર્વિસ પણ ઉપલબ્ધ છે. આ પહેલું ગેરેજ છે જે ખુશી આપવાનું વચન આપે છે.",
@@ -874,20 +958,20 @@ send_button: "મોકલવો",
 
   en: {
     our_services: "Our Services",
-    battery_desc: "Battery – Testing, replacement & maintenance for reliable performance.",
-    brake_desc: "Brake Service – Pads, full system check, smooth & safe braking.",
-    carburettor_desc: "Carburettor Cleaning – Tuning & restoration for fuel efficiency.",
-    cooling_desc: "Cooling System – Radiator & fan service to prevent overheating.",
-    delivery_desc: "Delivery – Pickup & drop bike service, anytime, anywhere.",
-    electrical_desc: "Electrical Repair – Lighting, ignition, battery, and wiring fixes.",
-    engine_desc: "Engine Repair – Diagnostics, overhauls & part replacement.",
-    inspection_desc: "General Inspection – Preventive checks for overall health.",
-    major_minor_desc: "Major/Minor Services – Complete bike care with attention to detail.",
-    oil_desc: "Oil Change – Premium oils for engine health.",
-    purchase_desc: "Pre-Purchase Inspection – Peace of mind before you buy.",
-    shocks_desc: "Rear Shocks – Repair & replacement for comfort.",
-    scooter_desc: "Scooter Services – Comprehensive care for all scooter types.",
-    all_desc: "All Services – From diagnostics to suspension repair and more.",
+    battery_desc: "Battery – Testing, replacement & maintenance for reliable performance... Read more",
+    brake_desc: "Brake Service – Pads, full system check, smooth & safe braking... Read more",
+    carburettor_desc: "Carburettor Cleaning – Tuning & restoration for fuel efficiency... Read more",
+    cooling_desc: "Cooling System – Radiator & fan service to prevent overheating... Read more",
+    delivery_desc: "Delivery – Pickup & drop bike service, anytime, anywhere... Read more",
+    electrical_desc: "Electrical Repair – Lighting, ignition, battery, and wiring fixes... Read more",
+    engine_desc: "Engine Repair – Diagnostics, overhauls & part replacement... Read more",
+    inspection_desc: "General Inspection – Preventive checks for overall health... Read more",
+    major_minor_desc: "Major/Minor Services – Complete bike care with attention to detail... Read more",
+    oil_desc: "Oil Change – Premium oils for engine health... Read more",
+    purchase_desc: "Pre-Purchase Inspection – Peace of mind before you buy... Read more",
+    shocks_desc: "Rear Shocks – Repair & replacement for comfort... Read more",
+    scooter_desc: "Scooter Services – Comprehensive care for all scooter types... Read more",
+    all_desc: "All Services – From diagnostics to suspension repair and more... Read more",
     about_us: "About Us",
     about_bio: "Bio: HK.18 GARAGE – Expert two-wheeler repair & service shop. Reliable, fast & affordable care for your ride. Your bike’s health, our priority!",
     about_desc: "HK.18 Garage is your trusted destination for all two-wheeler needs, offering top-notch services and repairs for motorcycles and scooters. Our skilled technicians are equipped with the latest tools and expertise to ensure your ride stays in peak condition. Whether it’s routine maintenance, complex repairs, or custom modifications, we pride ourselves on delivering efficient, reliable, and affordable solutions. At HK.18 Garage, customer satisfaction is our priority, providing you with fast, friendly, and professional service every time. Keep your bike running smoothly with HK.18 Garage! Anytime anywhere we will pickup your bike and also drop your bike we are best service provider visit HK.18 garage, this is first garage promised for happyness.",
@@ -950,7 +1034,88 @@ google_review_link: "Click here to leave a Google Review",
 live_chat: "Live Chat",
 chat_name_placeholder: "Your Name",
 chat_message_placeholder: "Type your message...",
-send_button: "Send" 
+send_button: "Send",
+},
+
+ur: {
+  our_services: "ہماری خدمات",
+  battery_desc: "بیٹری – جانچ، تبدیلی اور بہترین کارکردگی کے لیے دیکھ بھال... مزید پڑھیں",
+  brake_desc: "بریک سروس – پیڈ، مکمل نظام کی جانچ، ہموار اور محفوظ بریکنگ... مزید پڑھیں",
+  carburettor_desc: "کاربوریٹر صفائی – فیول کی بچت کے لیے ٹیوننگ اور بحالی... مزید پڑھیں",
+  cooling_desc: "کولنگ سسٹم – اوورہیٹنگ سے بچاؤ کے لیے ریڈیئیٹر اور پنکھے کی سروس... مزید پڑھیں",
+  delivery_desc: "ڈیلیوری – بائیک کی پک اپ اور ڈراپ سروس، جب چاہیں، جہاں چاہیں... مزید پڑھیں",
+  electrical_desc: "الیکٹریکل مرمت – لائٹس، اگنیشن، بیٹری، اور وائرنگ کی درستگی... مزید پڑھیں",
+  engine_desc: "انجن کی مرمت – تشخیص، اوورہال اور پرزوں کی تبدیلی... مزید پڑھیں",
+  inspection_desc: "جنرل معائنہ – مکمل چیک اپ آپ کی بائیک کی مجموعی صحت کے لیے... مزید پڑھیں",
+  major_minor_desc: "بڑی/چھوٹی سروسز – مکمل بائیک کیئر، ہر تفصیل پر توجہ کے ساتھ... مزید پڑھیں",
+  oil_desc: "آئل تبدیلی – انجن کی صحت کے لیے اعلیٰ معیار کا تیل... مزید پڑھیں",
+  purchase_desc: "پری-پرچیز معائنہ – خریداری سے پہلے ذہنی سکون حاصل کریں... مزید پڑھیں",
+  shocks_desc: "ریئر شاکس – آرام دہ سواری کے لیے مرمت اور تبدیلی... مزید پڑھیں",
+  scooter_desc: "سکوٹر سروسز – ہر قسم کے سکوٹر کے لیے مکمل دیکھ بھال... مزید پڑھیں",
+  all_desc: "تمام خدمات – تشخیص سے لے کر سسپنشن مرمت تک سب کچھ... مزید پڑھیں",
+  about_us: "ہمارے بارے میں",
+  about_bio: "بایو: HK.18 GARAGE – ماہر دو پہیہ گاڑیوں کی مرمت اور سروس ورکشاپ۔ قابلِ اعتماد، تیز رفتار اور کفایتی دیکھ بھال۔ آپ کی بائیک کی صحت، ہماری ترجیح!",
+  about_desc: "HK.18 GARAGE  آپ کی دو پہیہ گاڑیوں کی ہر ضرورت کے لیے ایک قابلِ اعتماد مرکز ہے، جہاں موٹرسائیکل اور سکوٹرز کے لیے اعلیٰ معیار کی سروس اور مرمت فراہم کی جاتی ہے۔ ہمارے ماہر مکینک جدید ترین ٹولز اور مہارت سے لیس ہیں تاکہ آپ کی سواری بہترین حالت میں رہے۔ چاہے معمول کی سروس ہو، بڑی خرابی، یا خاص تبدیلیاں، ہم ہر خدمت میں تیزی، اعتماد، اور مناسب قیمت پر بھروسا رکھتے ہیں۔ HK.18 گیراج میں گاہک کی تسلی ہماری پہلی ترجیح ہے — ہر بار تیز، دوستانہ اور پیشہ ورانہ سروس۔ اپنی بائیک کو ہمیشہ بہترین حالت میں رکھنے کے لیے HK.18 گیراج کا انتخاب کریں! جب چاہیں، جہاں چاہیں ہم آپ کی بائیک اٹھائیں گے اور واپس پہنچائیں گے — ہم سب سے بہترین سروس فراہم کرتے ہیں۔ HK.18 گیراج پہلی ورکشاپ ہے جو خوشی کی ضمانت دیتی ہے۔",
+  why_us: "ہمیں کیوں منتخب کریں؟",
+  why_us_desc: "ہماری خدمت ہی ہماری سب سے بڑی طاقت ہے۔ دو پہیہ گاڑیوں کے لیے ہماری خدمات کا دائرہ سب سے مؤثر اور سستا ہے۔ ہم اس بات کو یقینی بناتے ہیں کہ کسٹمر سیٹسفیکشن کا کانٹا ہمیشہ دائیں جانب رہے۔",
+  title_battery: "بیٹری",
+  title_carburettor: "کاربوریٹر صفائی",
+  title_cooling: "کولنگ سسٹم",
+  title_delivery: "ڈیلیوری",
+  title_electrical: "الیکٹریکل مرمت",
+  title_engine: "انجن مرمت",
+  title_inspection: "جنرل معائنہ",
+  title_major_minor: "بڑی/چھوٹی سروسز",
+  title_oil: "آئل تبدیلی",
+  title_purchase: "پری-پرچیز معائنہ",
+  title_shocks: "ریئر شاکس",
+  title_scooter: "سکوٹر سروسز",
+  title_all: "تمام خدمات",
+battery_desc_long: "آپ کی بائیک کو ایک ایسے دل کی ضرورت ہے جو کبھی نہ رکے — اور وہ دل بیٹری ہے۔ HK.18 GARAGE میں، ہم صرف بیٹری کو ٹیسٹ اور تبدیل نہیں کرتے، بلکہ آپ کی سواری کی روح کو دوبارہ زندہ کرتے ہیں۔ چاہے وہ مصروف صبح میں ایک فوری اسٹارٹ ہو یا لمبے سفر کی تیاری، ہماری ماہر بیٹری سروس یقینی بناتی ہے کہ آپ کبھی بھی کہیں پھنس نہ جائیں۔ سکون، اعتماد، اور آزادی سے سواری کا مزہ لیں۔ ہم پر بھروسہ کریں — ہر اسٹارٹ، ہر بار، ہم آپ کے سفر کو زندہ رکھتے ہیں۔",
+brake_desc_long: "آپ کی حفاظت ہر اسٹاپ سے شروع ہوتی ہے — اور ہر اسٹاپ آپ کے بریک پر منحصر ہے۔ HK.18 GARAGE میں ہم جانتے ہیں کہ درست بریکنگ کتنی اہم ہے۔ ہمارے ماہر ٹیکنیشن مکمل معائنہ کرتے ہیں، بریک پیڈز، ڈسکس، اور فلوئڈز کی مرمت اور تبدیلی کرتے ہیں تاکہ ہر بار ہموار، فوری، اور محفوظ بریکنگ ہو۔ چاہے آپ شہر کی ٹریفک میں ہوں یا کھلی سڑکوں پر، آپ کو مکمل کنٹرول کے ساتھ سواری کا اعتماد ملنا چاہیے۔ وارننگ کے انتظار میں نہ رہیں — ہمیں آپ کے بریک کا خیال رکھنے دیں، تاکہ آپ ذہنی سکون کے ساتھ سواری کر سکیں۔ کیونکہ حفاظت پر ہم کبھی سمجھوتہ نہیں کرتے۔",
+carburettor_desc_long: "کیا آپ کی بائیک کمزور محسوس ہو رہی ہے، پاور کھو رہی ہے یا فیول مائلیج خراب دے رہی ہے؟ آپ کی بائیک کی کارکردگی کا دل کاربوریٹر ہوتا ہے۔ HK.18 GARAGE میں، ہم آپ کے انجن کے پھیپھڑوں کا خاص خیال رکھتے ہیں — ہر حصے کو صاف کرتے ہیں، گندگی اور کاربن کو ہٹاتے ہیں، اور ایئر-فیول بیلنس کو بہترین بناتے ہیں۔ تھروٹل رسپانس، ہموار ایکسلریشن، اور انجن کی مجموعی صحت میں فرق محسوس کریں۔ ایک گندا کاربوریٹر آپ کی سواری کی خوشی کو چھین نہ لے — ہمیں آپ کی بائیک کو پھر سے زندہ کرنے دیں۔ کیونکہ آپ کی مشین کو آزادانہ سانس لینے کا حق ہے — اور آپ کو وہ سواری ملنی چاہیے جو نئی جیسی لگے۔",
+cooling_desc_long: "اوورہیٹنگ ہر رائیڈر کا سب سے بڑا دشمن ہے — لیکن ہم آپ کے ساتھ ہیں۔ ہماری ماہر کولنگ سسٹم سروس اس بات کو یقینی بناتی ہے کہ آپ کا انجن دباؤ میں بھی ٹھنڈا رہے، خاص طور پر سورَت کی گرمی میں۔ چاہے وہ ریڈی ایٹر فلشنگ ہو، کولنٹ ٹاپ-اپ، یا فین کی چیکنگ — ہم سب کچھ مکمل دھیان اور مہارت سے کرتے ہیں۔ ایک ٹھنڈا انجن بہتر کارکردگی، طویل زندگی، اور فکر سے آزاد سواری دیتا ہے۔ گرمی کو آپ کی خوشی چھیننے نہ دیں — HK.18 GARAGE پر بھروسہ کریں تاکہ آپ کی بائیک ہر میل میں ٹھنڈی، پرسکون، اور ناقابلِ شکست رہے۔",
+delivery_desc_long: "مصروف شیڈول؟ گیراج آنے کا وقت نہیں؟ فکر نہ کریں — ہم آپ کے پاس آئیں گے! ہماری قابلِ اعتماد پک اینڈ ڈراپ سروس کے ساتھ، آپ کی بائیک کو وہی دیکھ بھال ملے گی جو گیراج میں ملتی ہے — بغیر آپ کے دن کو متاثر کیے۔ چاہے آپ گھر پر ہوں، دفتر میں، یا سورَت میں کہیں بھی — بس سروس بُک کریں، باقی سب ہم سنبھال لیں گے۔ آپ کی بائیک کو محفوظ طریقے سے اٹھایا جائے گا، ماہرین کے ذریعے سروس کی جائے گی، اور وقت پر واپس کیا جائے گا — سب کچھ مسکراہٹ کے ساتھ۔ یہ صرف سہولت نہیں، بلکہ ہماری خدمت کا وعدہ ہے۔ HK.18 GARAGE ہر وقت، ہر جگہ آپ کی خدمت کے لیے حاضر ہے — کیونکہ آپ کا وقت قیمتی ہے اور آپ کی سواری بہترین سروس کی حقدار ہے۔",
+electrical_desc_long: "جھپکتی ہیڈلائٹس؟ بند ہارن؟ خراب وائرنگ؟ چھوٹے برقی مسائل کو بڑے مسئلے بننے نہ دیں۔ HK.18 GARAGE میں ہمارے ماہر ٹیکنیشنز ہر قسم کی الیکٹریکل مرمت کو باریکی سے اور احتیاط کے ساتھ انجام دیتے ہیں۔ چاہے وہ اگنیشن کا مسئلہ ہو، لائٹنگ میں خرابی ہو، یا بیٹری کی وائرنگ میں گڑبڑ — ہم آپ کی بائیک کی چمک اور کارکردگی واپس لاتے ہیں۔ ہر مرمت کے ساتھ، ہم یقینی بناتے ہیں کہ آپ کی سواری محفوظ، قابلِ بھروسا، اور مکمل طور پر فعال ہو۔ آپ کی بائیک کو روشن چمکنے اور صحیح ردعمل دینے کا حق ہے۔ ہمیں اس میں دوبارہ جان ڈالنے دیں — کیونکہ ہر کنکشن معنی رکھتا ہے۔",
+engine_desc_long: "آپ کا انجن آپ کی بائیک کا دل ہے — اور جب یہ کمزور ہو جائے، تو آپ کی سواری بھی متاثر ہوتی ہے۔ HK.18 GARAGE میں ہم ہر انجن کی دیکھ بھال دل سے کرتے ہیں۔ عجیب آوازیں ہوں، طاقت میں کمی، حدت یا اسٹارٹ نہ ہونے کے مسائل — ہمارے ماہرین ہر خرابی کی جڑ تک پہنچتے ہیں۔ چاہے وہ چھوٹا مسئلہ ہو یا مکمل اوورہال، ہم آپ کے انجن کی طاقت اور روح واپس لاتے ہیں۔ کیونکہ جب آپ کا انجن روانی سے دھاڑتا ہے، تو ہر سفر طاقتور محسوس ہوتا ہے۔ اعتماد کے ساتھ سواری کریں — ہمیں اپنی بائیک کے دل میں پھر سے جان ڈالنے دیں۔",
+inspection_desc_long: "ہر سواری ایک کہانی سناتی ہے — اور ہر بائیک ایک مکمل معائنہ کی مستحق ہے تاکہ وہ کہانی مضبوطی سے جاری رہے۔ ہمارا جنرل انسپیکشن آپ کی بائیک کے لیے ایک مکمل باڈی اسکین کی طرح ہے۔ بریکس سے لے کر لائٹس، ٹائروں سے معطلی تک، ہم ہر اہم حصے کا ماہر طریقے سے معائنہ کرتے ہیں۔ چاہے آپ ایک لمبی سواری کا منصوبہ بنا رہے ہوں یا صرف سکون چاہتے ہوں، ہمارا چیک اپ حفاظت، کارکردگی، اور بھروسا یقینی بناتا ہے۔ مسائل کے اچانک آنے کا انتظار نہ کریں — HK.18 GARAGE کو پہلے پکڑنے دیں اور آپ کی بائیک کو ہر سڑک پر مسکرانے دیں۔",
+major_minor_desc_long: "آپ کی بائیک صرف سواری ہی نہیں بلکہ محبت کی مستحق ہے۔ ہماری میجر اور مائنر سروسز آپ کی مشین کو وہ توجہ دیتی ہیں جو اسے چاہیے — چاہے وہ ہلکی سی ٹیوننگ ہو یا مکمل دیکھ بھال۔ آئل چینج، فلٹر چیک، گہرے ڈائیگنوسٹکس سے لے کر پارٹس کی تبدیلی تک، ہم ہر سروس کو دل کی دھڑکن کی جانچ کی طرح لیتے ہیں۔ چھوٹے مسئلے؟ ہم انہیں بڑھنے سے پہلے درست کرتے ہیں۔ بڑے مسائل؟ ہم آپ کی بائیک کو پھر سے زندہ کرتے ہیں۔ HK.18 GARAGE کے ساتھ، ہر بولٹ اعتماد سے کسا جاتا ہے، اور ہر سروس خوشی کے ساتھ ختم ہوتی ہے — آپ کی اور آپ کی بائیک کی۔ ❤️",
+oil_desc_long: "انجن آئل کو اپنی بائیک کے خون کی مانند سمجھیں۔ وقت کے ساتھ یہ گندا ہو جاتا ہے، کمزور ہو جاتا ہے، اور اپنی طاقت کھو دیتا ہے۔ HK.18 GARAGE میں ہم صرف آئل نہیں بدلتے — ہم آپ کے انجن کی روح کو تازہ کرتے ہیں۔ 🛠️✨ بہترین گریڈ کے آئلز کے ساتھ، ہم یقینی بناتے ہیں کہ ہر سواری نرم ہو، ہر تھروٹل زیادہ طاقتور ہو، اور ہر اسٹارٹ پراعتماد ہو۔ نہ انجن پر دباؤ، نہ حدت — صرف خالص، طاقتور کارکردگی۔ اپنی بائیک کو پھر سے آزاد سانس لینے دیں۔ ہم پر بھروسا کریں، آپ کا انجن ہر ہموار میل پر آپ کا شکریہ ادا کرے گا۔ 💨❤️",
+purchase_desc_long: "موٹر سائیکل خریدنا صرف ایک سودا نہیں — یہ ایک جذبہ ہے، دو پہیوں پر ایک خواب ہے۔ لیکن چھپی ہوئی خرابیاں اس خواب کو پچھتاوے میں بدل سکتی ہیں۔ HK.18 GARAGE میں، ہمارا پری پرچیز انسپیکشن آپ کو اعتماد کے ساتھ سواری کرنے کی یقین دہانی دیتا ہے۔ 🛠️ ہم ہر نٹ، بولٹ، انجن کی دھڑکن، بریک کی گرفت اور الیکٹریکل سسٹم کی مکمل جانچ کرتے ہیں، اور آپ کو مکمل ہیلتھ رپورٹ دیتے ہیں۔ کوئی چھپی بات نہیں — صرف دیانت داری اور ماہر رائے۔ چاہے یہ آپ کی پہلی بائیک ہو یا اگلی، ہم پر بھروسا کریں تاکہ آپ کا سفر شروع ہونے سے پہلے ہی محفوظ ہو۔ 💯✅ ہوشیاری سے خریدیں، دانشمندی سے سواری کریں۔",
+shocks_desc_long: "ایک جھٹکوں بھرا سفر آپ کا مزہ خراب کر سکتا ہے، لیکن نرم اور مؤثر شاکس پھر سے سواری کو خوشگوار بناتے ہیں۔ HK.18 GARAGE میں، ہم جانتے ہیں کہ آپ کی بائیک کو کیسا آرام دینا چاہیے — ہر جھٹکا جذب ہو، ہر موڑ پر کنٹرول ہو۔ روزمرہ کے سفر یا لمبے ٹور — پرانے شاکس آپ کی سواری کو کم محفوظ اور کم آرام دہ بناتے ہیں۔ اسی لیے ہم معائنہ، مرمت یا متبادل کا کام احتیاط اور مہارت سے کرتے ہیں۔ 🛠️🧰 اعتماد کے ساتھ سواری کریں، سڑکوں پر روانی سے چلیں، اور ہر سفر کو محسوس کریں — ہر گڑھے کو نہیں۔ آرام، کنٹرول، اور دیکھ بھال — یہی ہمارا وعدہ ہے۔ 💯🏁",
+scooter_desc_long: "آپ کا اسکوٹر صرف ایک سواری نہیں — یہ آپ کا روزمرہ کا ساتھی ہے۔ چھوٹے کاموں سے لے کر روزانہ کے سفر تک، یہ ہموار چلنا، فوراً اسٹارٹ ہونا، اور بغیر کسی جھنجھٹ کے کام کرنا چاہیے۔ HK.18 GARAGE میں، ہم ہر اسکوٹر کو اپنی ہی گاڑی سمجھ کر سروس کرتے ہیں۔ چاہے انجن ٹوننگ ہو، بریک چیک، آئل چینج، یا الیکٹریکل خرابی — ہم سب کچھ ماہر طریقے سے سنبھالتے ہیں۔ 🧰⚙️ چھوٹی خرابیاں بڑی پریشانی میں نہ بدل جائیں، اس سے پہلے ہی اسکوٹر کو صحیح دیکھ بھال دیں۔ ہر موڑ پر نرمی محسوس کریں۔ ہم پر بھروسا کریں تاکہ آپ کا اسکوٹر ہمیشہ قابلِ اعتماد، مؤثر اور چلنے کے لیے تیار رہے۔ ❤️🛵",
+all_desc_long: "HK.18 GARAGE میں، ہم صرف بائیک نہیں ٹھیک کرتے — ہم ان کا خیال خاندان کی طرح رکھتے ہیں۔ چاہے آپ کی ٹو-وہیلر کو صرف آئل چینج کی ضرورت ہو یا مکمل انجن کی مرمت، ہم جذبے، مہارت، اور فخر کے ساتھ خدمت کرتے ہیں۔ 🧰💪 بیٹری ٹیسٹنگ 🔋 سے لے کر کاربوریٹر صفائی، بریک کی مرمت 🛑 سے لے کر ریئر شاکس کے متبادل تک، ہم سب کچھ ایک ہی چھت کے نیچے کرتے ہیں۔ اسکوٹر ہے؟ وہ بھی ہم سنبھالتے ہیں! 🛵 پک اپ اور ڈراپ چاہیے؟ ہم آپ کے پاس آئیں گے۔ 🚚 ہر نٹ، ہر بولٹ، ہر کیبل کو مکمل توجہ دیتے ہیں — کیونکہ آپ کی حفاظت اور اطمینان ہمارے لیے سب کچھ ہے۔ ❤️ آئیں، اپنی سواری کو اعتماد اور محبت سے چیک، مرمت اور بحال کروائیں۔ HK.18 GARAGE میں، ہر سروس صرف ایک کام نہیں — یہ ایک وعدہ ہے کہ آپ کی سواری ہموار، محفوظ، اور خوشگوار رہے۔ 😊✨",
+  "nav_heading": "⬇️صفحہ پر جانے کے لیے کلک کریں⬇️",
+  "nav_about": "ہمارے بارے میں",
+  "nav_why_us": "ہمیں کیوں منتخب کریں",
+  "nav_services": "خدمات",
+  "nav_gallery": "گیلری",
+  "nav_indian_bikes": "انڈین بائکس",
+  "nav_contact": "رابطہ کریں",
+  "nav_location": "مقام",
+  "nav_feedback": "فیڈبیک",
+  "nav_chat": "چیٹ",
+  "gallery_heading": "گیلری",
+  "indian_bikes_heading": "تمام انڈین بائکس",
+  "view_indian_bikes_btn": "تمام انڈین بائکس دیکھیں",
+  "back_to_top_btn": "⬆ اوپر جائیں",
+  "contact_title": "رابطہ کریں",
+  "contact_phone": "فون:",
+  "contact_whatsapp": "واٹس ایپ:",
+  "contact_whatsapp_link": "ابھی چیٹ کریں",
+  "contact_youtube": "یوٹیوب:",
+  "contact_youtube_link": "چینل دیکھیں",
+  "contact_instagram": "انسٹاگرام:",
+  "contact_email": "ای میل:",
+  "get_directions_btn": "📍 گوگل میپس پر ہدایات حاصل کریں",
+  "find_us": "ہمیں تلاش کریں",
+  "feedback_title": "ریٹنگ اور فیڈبیک",
+  "feedback_text": "آپ کی رائے ہمارے لیے قیمتی ہے!",
+  "google_review_link": "گوگل پر ریویو دینے کے لیے یہاں کلک کریں",
+  "live_chat": "لائیو چیٹ",
+  "chat_name_placeholder": "آپ کا نام",
+  "chat_message_placeholder": "اپنا پیغام لکھیں...",
+  "send_button": "بھیجیں"
 }
 };
 </script>
@@ -997,20 +1162,22 @@ function changeLanguage() {
 <!-- 🌐 Language Selector -->
 <select id="languageSelect" onchange="changeLanguage()" style="
   position: fixed;
-  top: 15px;
+  top: 20px;
   right: 15px;
   padding: 6px 10px;
   border-radius: 5px;
   border: none;
-  background: #66FCF1;
+  background: #66FCF1; 
   color: black;
   font-weight: bold;
   z-index: 9999;
 ">
   <option value="en">English</option>
+  <option value="ur">اردو</option>
   <option value="hi">हिंदी</option>
   <option value="gu">ગુજરાતી</option>
 </select>
+
 
 <script>
  const serviceDetails = {
@@ -1244,6 +1411,20 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 </script>
 
+
+<script>
+  function changeTheme(theme) {
+    document.body.className = ''; // reset all classes
+    document.body.classList.add(theme);
+    localStorage.setItem("selectedTheme", theme); // Save for next visit
+  }
+
+  // Load saved theme on reload
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("selectedTheme");
+    if (savedTheme) changeTheme(savedTheme);
+  };
+</script>
 </body>
 
 
