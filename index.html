@@ -140,11 +140,6 @@ body.Red {
   background: #8B0000;
   color: #fff;
 }
-if (savedTheme) {
-  changeTheme(savedTheme);
-} else {
-  changeTheme('dark'); // or 'machinery' as default
-}
 
 #why-us {
   background-color: #1F2833;
@@ -280,7 +275,6 @@ if (savedTheme) {
       Our service is our greatest strength. Our range of two-wheeler services is the most efficient and affordable in the market. We ensure that the satisfaction needle is always sliding to the right on the customer satisfaction meter.
     </p>
   </section>
-</div>
 
 <section id="services" class="section">
   <h2 data-key="our_services">Our Services</h2>
@@ -1117,7 +1111,7 @@ all_desc_long: "HK.18 GARAGE میں، ہم صرف بائیک نہیں ٹھیک �
   "chat_message_placeholder": "اپنا پیغام لکھیں...",
   "send_button": "بھیجیں"
 }
-};
+}
 </script>
 
 <script>
@@ -1411,20 +1405,26 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 </script>
 
-
 <script>
+  // Apply saved theme or default to dark
   function changeTheme(theme) {
-    document.body.className = ''; // reset all classes
-    document.body.classList.add(theme);
-    localStorage.setItem("selectedTheme", theme); // Save for next visit
+    document.body.className = ''; // Remove previous theme
+    document.body.classList.add(theme); // Apply new theme
+    localStorage.setItem("theme", theme); // Save theme
   }
 
-  // Load saved theme on reload
+  // Load theme on page load
   window.onload = function () {
-    const savedTheme = localStorage.getItem("selectedTheme");
-    if (savedTheme) changeTheme(savedTheme);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      changeTheme(savedTheme);
+    } else {
+      changeTheme('dark'); // Default theme
+    }
   };
 </script>
+
+
 </body>
 
 
